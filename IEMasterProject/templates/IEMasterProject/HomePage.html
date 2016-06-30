@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+
+
+    <title>IE Soft-Lab</title>
+
+</head>
+
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">IE Soft-Lab</a>
+    </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+
+
+<li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Apps <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="http://cml.liacs.nl/softlab/puma">PUMA</a></li>
+              <li role="separator" class="divider"></li>
+            <li><a href="http://cml.liacs.nl/softlab/EFactor">E-Factor</a></li>
+              <li role="separator" class="divider"></li>
+            <li><a href="http://cml.liacs.nl/softlab/exiovisuals">ExioVisuals</a></li>
+
+          </ul>
+        </li>
+
+          <li class="active"><a href="about">
+  <span class="glyphicon glyphicon-info-sign" aria-hidden="true" > About</span></a>
+</li>
+
+      </ul>
+</ul>
+
+</div>        </nav>
+
+
+
+
+
+
+
+
+
+   <!-- Some info on this app -->
+
+       <center>
+    <h2>Welcome to the IE Soft-lab Platform!</h2>
+       <br></center>
+
+
+
+<div class="container">
+
+
+    <div class="list-group">
+
+  <a href="http://cml.liacs.nl/softlab/puma" class="list-group-item ">
+<hr style="height:7px;border:none;color:#428bca;background-color:#428bca;width:100%;" />
+
+
+
+        <h3 ALIGN=center>The PUMA project</h3>
+        <p ALIGN=center>The PUMA project aims to quantify metals in Amsterdam and visualize them through an interactive map.</p>
+
+  </a>
+</div>
+
+<div class="list-group">
+
+  <a href="http://cml.liacs.nl/softlab/EFactor" class="list-group-item ">
+<hr style="height:7px;border:none;color:#428bca;background-color:#428bca;width:100%;" />
+
+
+
+   <h3 ALIGN=center>E-Factor Analysis [Beta]</h3>
+        <p ALIGN=center>The E-Factor is a tool from the field Green Chemistry in which the environmental performance of chemical reactions can be assessed. All data entered should be based on actual lab journal data.</p>
+
+  </a>
+</div>
+
+
+    <div class="list-group">
+
+  <a href="http://cml.liacs.nl/softlab/exiovisuals" class="list-group-item ">
+<hr style="height:7px;border:none;color:#428bca;background-color:#428bca;width:100%;" />
+
+
+
+   <h3 ALIGN=center>ExioVisuals</h3>
+            <p ALIGN=center>ExioVisuals is an effort to visualize complex Input-Output Analysis results from the Exio database.</p>
+
+  </a>
+</div>
+</div>
+
+</div>
+
+
+
+
+<hr>
+<footer>
+    <div class="container">
+
+        <!--Add a picture and center it-->
+        <center>
+            <div>
+    <!--Add a picture -->
+      <left><img src="{% static 'rsz_1firstsketch.png' %}" alt="Picture of Leiden University" />
+ </left>
+</div>
+         <font color="black">&copy; IE Soft-Lab 2016</font> </center>
+    </div>
+</footer>
+    <script src="{% static 'js/jquery-2.1.1.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+
+
+</html>

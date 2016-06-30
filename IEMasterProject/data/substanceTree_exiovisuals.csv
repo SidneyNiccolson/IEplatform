@@ -1,0 +1,29 @@
+Name#Code#Id#Parent_Id
+Total#total#1#NULL
+CO2#CO2#2#1
+CH4#CH4#3#1
+N2O#N2O#4#1
+PFC-HFC-SF6#PFC-HFC-SF6#5#1
+Combustion#E_CO2_c#6#2
+Combustion#E_CH4_c#7#3
+Combustion#E_N2O_c#8#4
+Biogenic#CO2_biogenic#9#2
+Waste#CO2_bio_waste#10#9
+Waste#CH4_waste#11#3
+Fossil#CO2_fossil#12#2
+Waste#CO2_fossil_waste#13#12
+Non Combustion#E_CH4_n#14#3
+Extraction/production of (natural) gas#CH4_extr_prod_NG#15#14
+Extraction/production of crude oil#CH4_extr_prod_oil#16#14
+Mining of antracite#CH4_mining_antra#17#14
+Mining of bituminous coal#CH4_mining_bitu#18#14
+Mining of coking coal#CH4_mining_coke#19#14
+Mining of lignite (brown coal)#CH4_mining_lign#20#14
+Mining of sub-bituminous coal#CH4_mining_sub#21#14
+Oil refinery#CH4_mining_oilrefinery#22#14
+Non Combustion#E_CO2_n#23#2
+Cement production#CO2_cement#24#23
+Lime production#CO2_lime#25#23
+Agriculture#CH4_agriculture#26#14
+Non Combustion#E_N2O_n#27#4
+Agriculture#N2O_agriculture#28#27

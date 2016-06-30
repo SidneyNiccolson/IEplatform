@@ -1,0 +1,341 @@
+{% load static %}
+{% load nvd3_tags %}
+
+
+
+
+
+
+
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+     {% include_chart_jscss %}
+
+
+
+
+     {%  load_chart charttype chartdata chartcontainer extra %}
+    {%  load_chart charttype2 chartdata2 chartcontainer2 extra2   %}
+
+</head>
+
+<title>ExioVisuals- Global </title>
+
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="http://cml.liacs.nl/softLab/ExioVisuals">ExioVisuals</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+
+
+          <li class="active"><a href="../global">
+  <span class="glyphicon glyphicon-globe" aria-hidden="true" > Global</span></a>
+</li>
+           <li class="active"><a href="../regional">
+  <span class="glyphicon glyphicon-map-marker" aria-hidden="true" > Regional</span></a>
+</li>
+
+
+
+
+
+
+
+<li class="active"><a href="http://cml.liacs.nl/softLab/about">
+  <span class="glyphicon glyphicon-info-sign" aria-hidden="true" > About</span></a>
+</li>
+
+
+
+
+
+      </ul>
+
+      </ul>
+<ul class="nav navbar-nav navbar-right">
+        <li class="active"><a href="http://cml.liacs.nl/softLab">
+  <span class="glyphicon glyphicon-home" aria-hidden="true" > Home</span></a>
+</li>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+
+
+               </ul>
+               <ul class="nav">
+
+
+               </ul>
+           </div>
+           <!--/.nav-collapse -->
+       </div>
+
+
+
+
+
+             <style type="text/css">
+    select {
+        width:500px;
+    }
+</style>
+
+
+<!--
+
+
+<div class="dropdown">
+<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+   <span class="glyphicon glyphicon-filter" aria-hidden="true" > Filter</span>
+    <span class="caret"></span>
+  </button>
+<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+
+<form action="../global/" method="post">{% csrf_token %}
+    <hr style="height:3px;border:none;color:#428bca;background-color:#778899;width:100%;" />
+
+    Select emissions (multiple allowed): <br>
+       <select multiple name="emission">
+
+
+    {% for movie in Emission %}
+
+
+            <option value="{{movie.0}}" > {{movie.1}}  </option>
+
+    {% endfor %}
+           </select>
+    <br><br>
+    Select countries: <br>
+           <select name="country">
+    {% for movie in Country %}
+
+
+            <option value="{{movie.0}}" > {{movie.1}}  </option>
+
+    {% endfor %}
+</select>
+<input type="hidden" name="reactantData" value="{{ reactantData }}" >
+    <br>
+        <hr style="height:3px;border:none;color:#428bca;background-color:#778899;width:100%;" />
+
+    <center>
+    <input type="submit" class="btn btn-info" value="Filter"></center>
+
+</form>
+</ul>
+</div>
+
+-->
+
+</div>
+    </a>
+  </div>
+    </div>
+    </div>
+
+
+
+
+
+
+
+
+
+<!--
+<!-- HIGHLY EXPIREMENTAL FILTERING PART !!!! -->
+<ul class="nav navbar-inverse pull-center navbar-fixed-bottom always-open">
+
+          <li class="divider-vertical"></li>
+          <li class="dropdown keep-open " style="background-color:#e5e5e5">
+            <a class="dropdown-toggle" id="dlDropDown" href="#" data-toggle="dropdown" type="button" > <span class="glyphicon glyphicon-filter" aria-hidden="true" > Filter</span> </a>
+
+
+              <div class="dropdown-menu" style="background-color:#e5e5e5">
+              <!--  form here -->
+                  <center>
+<a href="#" class="download" style="color:red"> Close
+                        <span class="glyphicon glyphicon-remove-sign" aria-hidden="true" style="color:red">
+                  </span></a>
+
+</center><br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true" >
+  <div class="panel panel-default" >
+    <div class="panel-heading" role="tab" id="headingOne" >
+      <h4 class="panel-title" >
+        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne" >
+          Collapsible Group Item #1
+        </a>
+      </h4>
+    </div>
+    <div id="collapseOne" class="panel-collapse collapse out" role="tabpanel" aria-labelledby="headingOne" >
+      <div class="panel-body">
+
+
+          <form class="form-inline" method="post" action="Validation1/">
+     {% csrf_token %}
+<input type="hidden" name="snp_id" value="{{snp_id}}" >
+    {{formset.management_form}}
+{% for f_form in formset %}
+    <br>
+        {{ f_form }}<br>
+    {% endfor %}
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingTwo">
+      <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          Collapsible Group Item #2
+        </a>
+      </h4>
+    </div>
+    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+      <div class="panel-body">
+        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingThree">
+      <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          Collapsible Group Item #3
+        </a>
+      </h4>
+    </div>
+    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+      <div class="panel-body">
+        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<br>
+    <center>
+
+
+
+            <input type="submit" class="btn btn-success" value="Visualize">
+            <span class="glyphicon glyphicon-menu-right" aria-hidden="true" >
+           </span></center>
+</form>
+            </div>
+          </li>
+        </ul>
+
+
+<!-- GRAPHICAL PART -->
+
+
+<div class="container">
+<div class="row">
+  <div class="row-xs-6 col-md-x">
+    <a class="thumbnail">
+         <div class="caption" ALIGN=justify>
+      <h3 ALIGN=center>{{title}}</h3>
+        <p> {{description}}</p>
+         </div>
+    </a>
+  </div>
+    </div>
+    </div>
+
+<center>
+
+
+   <p> {% include_container chartcontainer 600 800 %}</p>
+    </a>
+
+</center>
+
+
+
+<div class="container">
+<div class="row">
+  <div class="row-xs-6 col-md-x">
+    <a class="thumbnail">
+         <div class="caption" ALIGN=justify>
+      <h3 ALIGN=center>TimeSeries</h3>
+        <p> 1995 untill 2011</p>
+         </div>
+    </a>
+  </div>
+    </div>
+    </div>
+
+<center>
+
+
+   <p> {% include_container chartcontainer2 600 800 %}</p>
+    </a>
+
+</center>
+
+
+
+
+
+
+
+
+<footer>
+
+    <div class="container">
+
+        <!--Add a picture and center it-->
+        <center>
+         <font color="black">&copy; IE Soft-Lab 2016</font> </center>
+    </div>
+</footer>
+<script src="{% static 'js/jquery-2.1.1.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+
+</div>
+-->
+</html>

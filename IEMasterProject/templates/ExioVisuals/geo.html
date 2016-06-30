@@ -1,0 +1,683 @@
+{% load static %}
+{% load bootstrap %}
+{% load leaflet_tags %}
+{% load geojson_tags %}
+
+
+{% block extra_assets %}
+  {% leaflet_js %}
+  {% leaflet_css %}
+{% endblock %}
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{{STATIC_URL}}fancytree/skin-bootstrap-n/ui.fancytree.css" rel="stylesheet" type="text/css"
+    class="skinswitcher">
+  <script src="{{STATIC_URL}}fancytree/src/jquery.fancytree.js" type="text/javascript"></script>
+  <script src="{{STATIC_URL}}fancytree/src/jquery.fancytree.dnd.js" type="text/javascript"></script>
+  <script src="{{STATIC_URL}}fancytree/src/jquery.fancytree.edit.js" type="text/javascript"></script>
+  <script src="{{STATIC_URL}}fancytree/src/jquery.fancytree.glyph.js" type="text/javascript"></script>
+  <script src="{{STATIC_URL}}fancytree/src/jquery.fancytree.table.js" type="text/javascript"></script>
+  <script src="{{STATIC_URL}}fancytree/src/jquery.fancytree.wide.js" type="text/javascript"></script>
+  <script src="{{STATIC_URL}}fancytree/src/jquery.fancytree.childcounter.js" type="text/javascript"></script>
+ <script src="{{STATIC_URL}}fancytree/src/jquery.fancytree.filter.js" type="text/javascript"></script>
+
+    <!-- bootstrap -->
+<!-- dropdown functionalities -->
+<script src="{% static 'js/jquery-2.1.1.min.js' %}"></script>
+    <!--
+<script src="{% static 'js/bootstrap.min.css' %}"></script>
+-->
+    <link rel="stylesheet" type="text/css" href="{{STATIC_URL}}css/bootstrap.min.css"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+
+<!-- Add code to initialize the product tree when the document is loaded: -->
+{% include "ExioVisuals/myFancyTrees.html" %}
+
+<!--popup functionality-->
+{% if popup %}
+<script type="text/javascript">
+
+
+ $(window).load(function(){
+        $('#myModal').modal('show');
+    });
+
+</script>
+{% endif %}
+
+</head>
+
+
+
+
+
+
+
+
+
+
+
+
+    <title>ExioVisuals -- {% block title %}{% endblock %}</title>
+
+<!-- navigation bar-->
+
+<nav class="navbar navbar-default ">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="http://cml.liacs.nl/softlab/exiovisuals">ExioVisuals</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+
+
+          <li class="active" ><a href="../distribution" >
+
+  <span class="glyphicon glyphicon-scale" aria-hidden="true" > PieChart  </span></a>
+</li>
+
+          <li class="active"><a href="../timeseries">
+
+  <span class="glyphicon glyphicon-time" aria-hidden="true" > TimeSeries</span></a>
+</li>
+
+           <li class="active"><a href="../geo">
+  <span class="glyphicon glyphicon-globe" aria-hidden="true" style="color: #428bca;"> <u style="color:black;"> GeoRegion</u></span></a>
+</li>
+<li class="active"><a href="../supplychain">
+  <span class="glyphicon glyphicon-link" aria-hidden="true" > SupplyChain</span></a>
+</li>
+
+          <li class="active"><a href="../treemap">
+
+  <span class="glyphicon glyphicon-leaf" aria-hidden="true" > TreeMap</span></a>
+</li>
+
+
+
+
+
+
+
+
+
+<li class="active"><a href="http://cml.liacs.nl/softlab/about">
+  <span class="glyphicon glyphicon-info-sign" aria-hidden="true" > About</span></a>
+</li>
+
+
+
+
+
+      </ul>
+
+      </ul>
+<ul class="nav navbar-nav navbar-right">
+        <li class="active"><a href="http://cml.liacs.nl/softlab">
+  <span class="glyphicon glyphicon-home" aria-hidden="true" > Home</span></a>
+</li>
+    </div><!-- /.navbar-collapse -->
+  </div>
+
+
+
+
+<hr style="padding: 0px;
+    margin: 0px; ">
+    <!-- HIGHLY EXPIREMENTAL FILTERING PART !!!! -->
+<a class="nav navbar-inverse pull-center navbar-fixed-left always-open">
+
+<!--MODE DROPDOWN -->
+       <ul class="nav nav-tabs2" style="float:left;
+    border-color: #428bca; " >
+
+                                  <a class="dropdown-toggle" id="dl2DropDown" href="#" data-toggle="dropdown" type="button" > <span class="glyphicon glyphicon-option-vertical" aria-hidden="true" > Mode&nbsp;</span> </a>
+              <div class="dropdown-menu scrollable-menu" style="background-color:#e5e5e5;">
+<center>
+                  <a href="#" class="download" style="color:red"> Close
+                        <span class="glyphicon glyphicon-remove-sign" aria-hidden="true" style="color:red">
+                  </span></a></center>
+
+
+                  {% block modeForms %}
+<div class="panel-body"  style="background-color:white;font-size: 12px;">
+
+<legend>Decomposition</legend>
+
+<form class="form-inline" method="post" action="../distribution/">
+     {% csrf_token %}
+<fieldset class="inlineLabels">
+    Absolute footprint of consumption split by{{ modeForm }}
+</fieldset>
+<center>
+     <button id="reload" class="btn btn-lg btn-primary btn-sm" type="submit">Reload</button></center>
+ </form>
+   </div>
+                  {% endblock %}
+
+
+              </div>
+    </ul>
+     <div  style="float:left; "><a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></div>
+    <ul class="nav nav-tabs2" style="float:left;
+    border-color: #428bca; " >
+
+                                  <a class="dropdown-toggle" id="dl3DropDown" href="#" data-toggle="dropdown" type="button" > <span class="
+glyphicon glyphicon-menu-hamburger" aria-hidden="true" > Problem&nbsp;</span> </a>
+              <div class="dropdown-menu scrollable-menu" style="background-color:#e5e5e5;">
+<center>
+                  <a href="#" class="download" style="color:red"> Close
+                        <span class="glyphicon glyphicon-remove-sign" aria-hidden="true" style="color:red">
+                  </span></a></center>
+
+                  {% block problemForms %}
+
+                  {% endblock %}
+
+
+              </div>
+    </ul>
+
+    <div  style="float:left; "><a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></div>
+<form  method="post" action="../distribution/"> {% csrf_token %}
+    <!--Filter DROPDOWN -->
+          <ul class="nav nav-tabs" style=" float:left;
+    border-color: #428bca;">
+
+
+            <a class="dropdown-toggle" id="dlDropDown" href="#" data-toggle="dropdown" type="button" > <span class="glyphicon glyphicon-filter" aria-hidden="true" > Filter&nbsp;</span> </a>
+
+
+              <div class="dropdown-menu scrollable-menu" style="background-color:#e5e5e5;">
+              <!--  form here -->
+                  <center>
+<a href="#" class="download" style="color:red"> Close
+                        <span class="glyphicon glyphicon-remove-sign" aria-hidden="true" style="color:red">
+                  </span></a>
+
+
+</center><br>
+<div class="panel-group " id="accordion" role="tablist" aria-multiselectable="true" >
+
+
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingThree">
+      <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          Environmental Pressure
+        </a>
+      </h4>
+    </div>
+    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+      <div class="panel-body">
+        {% block body3 %}<!--Send the mode in this block (no specific reason-->
+<input type="hidden" name="selectMode" value="{{ userSelectMode }}" >
+{{warning|safe}}
+Select pressures  for analysis:
+ <center>
+
+
+            <br>
+
+            <div class="btn-group" role="group" aria-label="...">
+  <button type="button" class="btn btn-primary btn-sm"href="#" id="btnsSelectAll5">Select all</button>
+  <button type="button" class="btn btn-primary btn-sm" href="#" id="btnsDeselectAll5">Deselect all</button>
+    <button type="button" id="btnsExpandAll5" class="btn btn-primary btn-sm">Expand all</button>
+      <button  type="button" id="btnsCollapseAll5" class="btn btn-primary btn-sm">Collapse all</button>
+      <button  type="button"  class="btn btn-primary btn-sm" style="background: transparent;border: none !important;
+    font-size:0;">Collapse all</button></div>
+                <br>
+                <p>
+                    <br>
+
+	</p>
+
+
+
+       <p>
+</center>
+
+
+		<div id="tree5" class="panel-body fancytree-colorize-hover fancytree-fade-expander">
+
+        </div> {% endblock %}
+          </div>
+    </div>
+  </div>
+    <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingFour">
+      <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+          Year
+        </a>
+      </h4>
+    </div>
+    <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+      <div class="panel-body">
+        {% block body4 %} {{ yearsMode1 }}
+{% endblock %}
+          </div>
+    </div>
+  </div>
+    <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingSeven">
+      <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+           Region production
+        </a>
+      </h4>
+    </div>
+    <div id="collapseSeven" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSeven">
+      <div class="panel-body">
+        {% block body7 %}
+Select countries for analysis:
+
+<center>
+
+
+            <br>
+
+            <div class="btn-group" role="group" aria-label="...">
+  <button type="button" class="btn btn-primary btn-sm"href="#" id="btnsSelectAll3">Select all</button>
+  <button type="button" class="btn btn-primary btn-sm" href="#" id="btnsDeselectAll3">Deselect all</button>
+    <button type="button" id="btnsExpandAll3" class="btn btn-primary btn-sm">Expand all</button>
+      <button  type="button" id="btnsCollapseAll3" class="btn btn-primary btn-sm">Collapse all</button>
+      <button  type="button"  class="btn btn-primary btn-sm" style="background: transparent;border: none !important;
+    font-size:0;">Collapse all</button></div>
+                <br>
+                <p>
+                    <br>
+
+	</p>
+
+
+
+       <p>
+</center>
+
+
+		<div id="tree3" class="panel-body fancytree-colorize-hover fancytree-fade-expander">
+
+        </div> {% endblock %}
+          </div>
+    </div>
+  </div>
+     <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingEight">
+      <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+           Sector production
+        </a>
+      </h4>
+    </div>
+    <div id="collapseEight" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingEight">
+      <div class="panel-body">
+        {% block body8 %}   {{warning|safe}}
+   Select products for analysis:
+<center>
+
+
+            <br>
+
+            <div class="btn-group" role="group" aria-label="...">
+  <button type="button" class="btn btn-primary btn-sm"href="#" id="btnsSelectAll4">Select all</button>
+  <button type="button" class="btn btn-primary btn-sm" href="#" id="btnsDeselectAll4">Deselect all</button>
+    <button type="button" id="btnsExpandAll4" class="btn btn-primary btn-sm">Expand all</button>
+      <button  type="button" id="btnsCollapseAll4" class="btn btn-primary btn-sm">Collapse all</button>
+      <button  type="button"  class="btn btn-primary btn-sm" style="background: transparent;border: none !important;
+    font-size:0;">Collapse all</button></div>
+                <br>
+
+
+
+
+       <p>
+</center>
+
+
+		<div id="tree4" class="panel-body fancytree-colorize-hover fancytree-fade-expander">
+
+        </div>{% endblock %}
+          </div>
+    </div>
+  </div>
+    <div class="panel panel-default">
+
+    <div class="panel-heading" role="tab" id="headingTen">
+      <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
+          Region selling
+        </a>
+      </h4>
+    </div>
+    <div id="collapseTen" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTen">
+      <div class="panel-body ">
+
+        {% block body10 %}{{warning|safe}}
+Select countries  for analysis:
+ <center>
+
+
+            <br>
+
+            <div class="btn-group" role="group" aria-label="...">
+  <button type="button" class="btn btn-primary btn-sm"href="#" id="btnsSelectAll6">Select all</button>
+  <button type="button" class="btn btn-primary btn-sm" href="#" id="btnsDeselectAll6">Deselect all</button>
+    <button type="button" id="btnsExpandAll6" class="btn btn-primary btn-sm">Expand all</button>
+      <button  type="button" id="btnsCollapseAll6" class="btn btn-primary btn-sm">Collapse all</button>
+      <button  type="button"  class="btn btn-primary btn-sm" style="background: transparent;border: none !important;
+    font-size:0;">Collapse all</button></div>
+                <br>
+                <p>
+                    <br>
+
+	</p>
+
+
+
+       <p>
+</center>
+
+
+		<div id="tree6" class="panel-body fancytree-colorize-hover fancytree-fade-expander">
+
+        </div>
+ {% endblock %}
+          </div>
+    </div>
+  </div>
+
+
+
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingSix">
+      <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+          Product purchased
+        </a>
+      </h4>
+    </div>
+    <div id="collapseSix" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSix">
+      <div class="panel-body">
+        {% block body6 %}{{warning|safe}}
+Select products for analysis:
+
+    <center>
+
+
+            <br>
+
+            <div class="btn-group" role="group" aria-label="...">
+  <button type="button" class="btn btn-primary btn-sm"href="#" id="btnsSelectAll">Select all</button>
+  <button type="button" class="btn btn-primary btn-sm" href="#" id="btnsDeselectAll">Deselect all</button>
+    <button type="button" id="btnsExpandAll" class="btn btn-primary btn-sm">Expand all</button>
+      <button  type="button" id="btnsCollapseAll" class="btn btn-primary btn-sm">Collapse all</button>
+      <button  type="button"  class="btn btn-primary btn-sm" style="background: transparent;border: none !important;
+    font-size:0;">Collapse all</button></div>
+                <br>
+                <p>
+                    <br>
+		<label>Search products:</label>
+		<input name="search" placeholder="Products..." autocomplete="off" >
+		<button id="btnResetSearch" hidden="hidden">&times;</button>
+		<span id="matches"></span>
+	</p>
+
+
+
+       <p>
+</center>
+
+
+		<div id="tree" class="panel-body fancytree-colorize-hover fancytree-fade-expander">
+
+        </div>
+
+
+
+
+ {% endblock %}
+          </div>
+    </div>
+  </div>
+    <div class="panel panel-default">
+
+    <div class="panel-heading" role="tab" id="headingFive">
+      <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+          Region consumption
+        </a>
+      </h4>
+    </div>
+    <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
+      <div class="panel-body ">
+
+        {% block body5 %}{{warning|safe}}
+Select countries  for analysis:
+ <center>
+
+
+            <br>
+
+            <div class="btn-group" role="group" aria-label="...">
+  <button type="button" class="btn btn-primary btn-sm"href="#" id="btnsSelectAll2">Select all</button>
+  <button type="button" class="btn btn-primary btn-sm" href="#" id="btnsDeselectAll2">Deselect all</button>
+    <button type="button" id="btnsExpandAll2" class="btn btn-primary btn-sm">Expand all</button>
+      <button  type="button" id="btnsCollapseAll2" class="btn btn-primary btn-sm">Collapse all</button>
+      <button  type="button"  class="btn btn-primary btn-sm" style="background: transparent;border: none !important;
+    font-size:0;">Collapse all</button></div>
+                <br>
+                <p>
+                    <br>
+
+	</p>
+
+
+
+       <p>
+</center>
+
+
+		<div id="tree2" class="panel-body fancytree-colorize-hover fancytree-fade-expander">
+
+        </div>
+ {% endblock %}
+          </div>
+    </div>
+  </div>
+
+
+
+    <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingNine">
+      <h4 class="panel-title">
+        <a class="collapsed" style="color:red" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+          <center>  Collapse <span class="glyphicon glyphicon-remove-sign" aria-hidden="true" style="color:red">
+                  </span></center>
+        </a>
+      </h4>
+    </div>
+    <div id="collapseNine" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingEight" >
+
+    </div>
+  </div>
+
+
+</div>
+
+<br>
+    <center>
+
+
+<!--
+            <input type="submit" class="btn btn-success" value="Visualize">
+            <span class="glyphicon glyphicon-menu-right" aria-hidden="true" >
+           </span></center>
+</form>
+
+-->
+        {% block belowButtons %}</center><button type="submit" class="btn btn-primary btn-sm" value="Send data">Visualize</button></p></center>
+</form>{% endblock %}</center>
+            </div>
+          </li>
+        </ul><!-- /.container-fluid -->
+</div></a>
+</nav>
+
+
+
+<!-- body of page-->
+
+
+ {% block body_block %}
+<div class="alert alert-danger">
+  <strong><span class="glyphicon glyphicon-alert" aria-hidden="true"></span></strong>The GeoRegion is not fully implemented yet.
+</div>
+             <center>
+
+
+<!--52.3667, 4.9000-->
+
+<script>
+
+
+var collection = {{ area|geojsonfeature:"colors,popupContent"|safe }};;
+var hotspot = {{ book|geojsonfeature:"popupContent"|safe }};;
+
+function onEachFeature(feature, layer) {
+    if (feature.properties && feature.properties.popupContent) {
+      layer.bindPopup(feature.properties.popupContent);
+    }
+
+  }
+
+function style(feature) {
+  return {
+     fillColor: feature.properties.colors,
+     fillOpacity: 0.5,
+  };
+}
+
+function map_init(map, options) {
+
+
+   L.geoJson(collection, {style: style, onEachFeature: onEachFeature}).addTo(map);
+
+   L.geoJson(hotspot, {onEachFeature: onEachFeature}).addTo(map.fitBounds([
+    [-51.4, -179.3],
+    [83.9, 124.8]
+]).setZoom(2));
+
+
+
+}
+document.getElementById("demo").innerHTML = map_init();
+
+
+</script>
+
+{% leaflet_map "yourmap" callback="window.map_init" %}
+</center>
+
+
+             </center>
+         </div>
+    </a>
+  </div>
+</div>
+       {% endblock %}
+
+<!-- Filter dropdown functionality-->
+
+
+
+
+<!--Hidden forms-->
+<div id="myId" class="hidden">
+
+<form id="tryit" class="form-inline" method="post" action="../distribution/">
+     {% csrf_token %}
+
+<!--
+    {{formset2.management_form}}
+
+{% for f_form in formset2 %}
+{{ f_form.names|bootstrap }} <br>
+    {{ f_form.name|bootstrap }} <br>
+    {{ f_form.grams|bootstrap }} <br>
+    {{ f_form.like|bootstrap }} <br>
+     {{ f_form.names2|bootstrap }} <br>
+    {% endfor %}
+
+
+{{ formTree2.media.css }}
+
+  {{ formTree2.as_p}}
+
+
+
+
+
+
+
+
+{{ formTree2.media.js }}
+-->
+<button type="submit" class="btn btn-success btn-xs">Submit</button></p>
+
+    </form>
+</div>
+
+
+<!-- Footer -->
+<footer>
+
+
+     <center>
+
+
+    <!--Add a picture -->
+      <left><img src="{% static 'rsz_1firstsketch.png' %}" alt="" />
+ </left>
+        <!--Add a picture and center it-->
+    <br>
+         <font color="black">&copy; IE Soft-Lab 2016</font>
+
+
+
+     </center>
+
+
+</footer>
+<Br>
+<br>
+
+
+
+
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+
+
+</html>
+
+
+
+
+
+
+
+
+

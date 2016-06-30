@@ -1,0 +1,277 @@
+Name#Code#Id#Parent_Id#Position (local)#Level#Parent (local)
+Total#total#1#NULL#1#0#0
+Agriculture, hunting and forestry#A#2#1#1#1#1
+Fishing#B#3#1#2#1#1
+Mining and quarrying#C#4#1#3#1#1
+Manufacturing#D#5#1#4#1#1
+Electricity, gas and water supply#E#6#1#5#1#1
+Construction#F#7#1#6#1#1
+Trade#G#8#1#7#1#1
+Hotels and restaurants#H#9#1#8#1#1
+Transport, storage and communication#I#10#1#9#1#1
+Financial intermediation#J#11#1#10#1#1
+Real estate, renting and business activities#K#12#1#11#1#1
+Public administration#L#13#1#12#1#1
+Education#M#14#1#13#1#1
+Health and social work#N#15#1#14#1#1
+Other service activities#OPQ#16#1#15#1#1
+Agriculture, hunting and related service activities#p01#17#2#1#2#1
+Forestry, logging and related service activities#p02#18#2#2#2#1
+Fishing, operating of fish hatcheries and fish farms; service activities incidental to fishing#p05#19#3#3#2#2
+Mining of coal and lignite; extraction of peat#p10#20#4#4#2#3
+Extraction of crude petroleum and natural gas; service activities incidental to oil and gas extraction excluding surveying#p11#21#4#5#2#3
+Mining of uranium and thorium ores#p12#22#4#6#2#3
+Mining of metal ores#p13#23#4#7#2#3
+Other mining and quarrying#p14#24#4#8#2#3
+Manufacture of food products and beverages#p15#25#5#9#2#4
+Manufacture of tobacco products#p16#26#5#10#2#4
+Manufacture of textiles#p17#27#5#11#2#4
+Manufacture of wearing apparel; dressing and dyeing of fur#p18#28#5#12#2#4
+Tanning and dressing of leather; manufacture of luggage, handbags, saddlery, harness and footwear#p19#29#5#13#2#4
+Manufacture of wood and of products of wood and cork, except furniture; manufacture of articles of straw and plaiting materials#p20#30#5#14#2#4
+Manufacture of pulp, paper and paper products#p21#31#5#15#2#4
+Publishing, printing and reproduction of recorded media#p22#32#5#16#2#4
+Manufacture of coke, refined petroleum products and nuclear fuels#p23#33#5#17#2#4
+Manufacture of chemicals and chemical products#p24#34#5#18#2#4
+Manufacture of rubber and plastic products#p25#35#5#19#2#4
+Manufacture of other non-metallic mineral products#p26#36#5#20#2#4
+Manufacture of basic metals#p27#37#5#21#2#4
+Manufacture of fabricated metal products, except machinery and equipment#p28#38#5#22#2#4
+Manufacture of machinery and equipment n.e.c.#p29#39#5#23#2#4
+Manufacture of office machinery and computers#p30#40#5#24#2#4
+Manufacture of electrical machinery and apparatus n.e.c.#p31#41#5#25#2#4
+Manufacture of radio, television and communication equipment and apparatus#p32#42#5#26#2#4
+Manufacture of medical, precision and optical instruments, watches and clocks#p33#43#5#27#2#4
+Manufacture of motor vehicles, trailers and semi-trailers#p34#44#5#28#2#4
+Manufacture of other transport equipment#p35#45#5#29#2#4
+Manufacture of furniture; manufacturing n.e.c.#p36#46#5#30#2#4
+Recycling#p37#47#5#31#2#4
+Electricity, gas, steam and hot water supply#p40#48#6#32#2#5
+Collection, purification and distribution of water#p41#49#6#33#2#5
+Construction#p45#50#7#34#2#6
+Sale, maintenance and repair of motor vehicles and motorcycles; retail sale services of automotive fuel#p50#51#8#35#2#7
+Wholesale trade and commission trade, except of motor vehicles and motorcycles#p51#52#8#36#2#7
+Retail trade, except of motor vehicles and motorcycles; repair of personal and household goods#p52#53#8#37#2#7
+Hotels and restaurants#p55#54#9#38#2#8
+Land transport; transport via pipelines#p60#55#10#39#2#9
+Water transport#p61#56#10#40#2#9
+Air transport#p62#57#10#41#2#9
+Supporting and auxiliary transport activities; activities of travel agencies#p63#58#10#42#2#9
+Post and telecommunications#p64#59#10#43#2#9
+Financial intermediation, except insurance and pension funding#p65#60#11#44#2#10
+Insurance and pension funding, except compulsory social security#p66#61#11#45#2#10
+Activities auxiliary to financial intermediation#p67#62#11#46#2#10
+Real estate activities#p70#63#12#47#2#11
+Renting of machinery and equipment without operator and of personal and household goods#p71#64#12#48#2#11
+Computer and related activities#p72#65#12#49#2#11
+Research and development#p73#66#12#50#2#11
+Other business activities#p74#67#12#51#2#11
+Public administration and defence; compulsory social security#p75#68#13#52#2#12
+Education#p80#69#14#53#2#13
+Health and social work#p85#70#15#54#2#14
+Sewage and refuse disposal, sanitation and similar activities#p90#71#16#55#2#15
+Activities of membership organisation n.e.c.#p91#72#16#56#2#15
+Recreational, cultural and sporting activities#p92#73#16#57#2#15
+Other service activities#p93#74#16#58#2#15
+Private households with employed persons#p95#75#16#59#2#15
+Extra-territorial organizations and bodies#p99#76#16#60#2#15
+Paddy rice#p01.a#77#17#1#3#1
+Wheat#p01.b#78#17#2#3#1
+Cereal grains nec#p01.c#79#17#3#3#1
+Vegetables, fruit, nuts#p01.d#80#17#4#3#1
+Oil seeds#p01.e#81#17#5#3#1
+Sugar cane, sugar beet#p01.f#82#17#6#3#1
+Plant-based fibers#p01.g#83#17#7#3#1
+Crops nec#p01.h#84#17#8#3#1
+Cattle#p01.i#85#17#9#3#1
+Pigs#p01.j#86#17#10#3#1
+Poultry#p01.k#87#17#11#3#1
+Meat animals nec#p01.l#88#17#12#3#1
+Animal products nec#p01.m#89#17#13#3#1
+Raw milk#p01.n#90#17#14#3#1
+Wool, silk-worm cocoons#p01.o#91#17#15#3#1
+Manure (conventional treatment)#p01.w.1#92#17#16#3#1
+Manure (biogas treatment)#p01.w.2#93#17#17#3#1
+Products of forestry, logging and related services#p02#94#18#18#3#2
+Fish and other fishing products; services incidental of fishing#p05#95#19#19#3#3
+Anthracite#p10.a#96#20#20#3#4
+Coking Coal#p10.b#97#20#21#3#4
+Other Bituminous Coal#p10.c#98#20#22#3#4
+Sub-Bituminous Coal#p10.d#99#20#23#3#4
+Patent Fuel#p10.e#100#20#24#3#4
+Lignite/Brown Coal#p10.f#101#20#25#3#4
+BKB/Peat Briquettes#p10.g#102#20#26#3#4
+Peat#p10.h#103#20#27#3#4
+Crude petroleum and services related to crude oil extraction, excluding surveying#p11.a#104#21#28#3#5
+Natural gas and services related to natural gas extraction, excluding surveying#p11.b#105#21#29#3#5
+Natural Gas Liquids#p11.b.1#106#21#30#3#5
+Other Hydrocarbons#p11.c#107#21#31#3#5
+Uranium and thorium ores#p12#108#22#32#3#6
+Iron ores#p13.1#109#23#33#3#7
+Copper ores and concentrates#p13.20.11#110#23#34#3#7
+Nickel ores and concentrates#p13.20.12#111#23#35#3#7
+Aluminium ores and concentrates#p13.20.13#112#23#36#3#7
+Precious metal ores and concentrates#p13.20.14#113#23#37#3#7
+Lead, zinc and tin ores and concentrates#p13.20.15#114#23#38#3#7
+Other non-ferrous metal ores and concentrates#p13.20.16#115#23#39#3#7
+Stone#p14.1#116#24#40#3#8
+Sand and clay#p14.2#117#24#41#3#8
+Chemical and fertilizer minerals, salt and other mining and quarrying products n.e.c.#p14.3#118#24#42#3#8
+Products of meat cattle#p15.a#119#25#43#3#9
+Products of meat pigs#p15.b#120#25#44#3#9
+Products of meat poultry#p15.c#121#25#45#3#9
+Meat products nec#p15.d#122#25#46#3#9
+products of Vegetable oils and fats#p15.e#123#25#47#3#9
+Dairy products#p15.f#124#25#48#3#9
+Processed rice#p15.g#125#25#49#3#9
+Sugar#p15.h#126#25#50#3#9
+Food products nec#p15.i#127#25#51#3#9
+Beverages#p15.j#128#25#52#3#9
+Fish products#p15.k#129#25#53#3#9
+Tobacco products#p16#130#26#54#3#10
+Textiles#p17#131#27#55#3#11
+Wearing apparel; furs#p18#132#28#56#3#12
+Leather and leather products#p19#133#29#57#3#13
+Wood and products of wood and cork (except furniture); articles of straw and plaiting materials#p20#134#30#58#3#14
+Wood material for treatment, Re-processing of secondary wood material into new wood material#p20.w#135#30#59#3#14
+Pulp#p21.1#136#31#60#3#15
+Secondary paper for treatment, Re-processing of secondary paper into new pulp#p21.w.1#137#31#61#3#15
+Paper and paper products#p21.2#138#31#62#3#15
+Printed matter and recorded media#p22#139#32#63#3#16
+Coke Oven Coke#p23.1.a#140#33#64#3#17
+Gas Coke#p23.1.b#141#33#65#3#17
+Coal Tar#p23.1.c#142#33#66#3#17
+Motor Gasoline#p23.20.a#143#33#67#3#17
+Aviation Gasoline#p23.20.b#144#33#68#3#17
+Gasoline Type Jet Fuel#p23.20.c#145#33#69#3#17
+Kerosene Type Jet Fuel#p23.20.d#146#33#70#3#17
+Kerosene#p23.20.e#147#33#71#3#17
+Gas/Diesel Oil#p23.20.f#148#33#72#3#17
+Heavy Fuel Oil#p23.20.g#149#33#73#3#17
+Refinery Gas#p23.20.h#150#33#74#3#17
+Liquefied Petroleum Gases (LPG)#p23.20.i#151#33#75#3#17
+Refinery Feedstocks#p23.20.j#152#33#76#3#17
+Ethane#p23.20.k#153#33#77#3#17
+Naphtha#p23.20.l#154#33#78#3#17
+White Spirit & SBP#p23.20.m#155#33#79#3#17
+Lubricants#p23.20.n#156#33#80#3#17
+Bitumen#p23.20.o#157#33#81#3#17
+Paraffin Waxes#p23.20.p#158#33#82#3#17
+Petroleum Coke#p23.20.q#159#33#83#3#17
+Non-specified Petroleum Products#p23.20.r#160#33#84#3#17
+Nuclear fuel#p23.3#161#33#85#3#17
+Plastics, basic#p24.a#162#34#86#3#18
+Secondary plastic for treatment, Re-processing of secondary plastic into new plastic#p24.a.w#163#34#87#3#18
+N-fertiliser#p24.b#164#34#88#3#18
+P- and other fertiliser#p24.c#165#34#89#3#18
+Chemicals nec#p24.d#166#34#90#3#18
+Charcoal#p24.e#167#34#91#3#18
+Additives/Blending Components#p24.f#168#34#92#3#18
+Biogasoline#p24.g#169#34#93#3#18
+Biodiesels#p24.h#170#34#94#3#18
+Other Liquid Biofuels#p24.i#171#34#95#3#18
+Rubber and plastic products#p25#172#35#96#3#19
+Glass and glass products#p26.a#173#36#97#3#20
+Secondary glass for treatment, Re-processing of secondary glass into new glass#p26.a.w#174#36#98#3#20
+Ceramic goods#p26.b#175#36#99#3#20
+Bricks, tiles and construction products, in baked clay#p26.c#176#36#100#3#20
+Cement, lime and plaster#p26.d#177#36#101#3#20
+Ash for treatment, Re-processing of ash into clinker#p26.d.w#178#36#102#3#20
+Other non-metallic mineral products#p26.e#179#36#103#3#20
+Basic iron and steel and of ferro-alloys and first products thereof#p27.a#180#37#104#3#21
+Secondary steel for treatment, Re-processing of secondary steel into new steel#p27.a.w#181#37#105#3#21
+Precious metals#p27.41#182#37#106#3#21
+Secondary preciuos metals for treatment, Re-processing of secondary preciuos metals into new preciuos metals#p27.41.w#183#37#107#3#21
+Aluminium and aluminium products#p27.42#184#37#108#3#21
+Secondary aluminium for treatment, Re-processing of secondary aluminium into new aluminium#p27.42.w#185#37#109#3#21
+Lead, zinc and tin and products thereof#p27.43#186#37#110#3#21
+Secondary lead for treatment, Re-processing of secondary lead into new lead#p27.43.w#187#37#111#3#21
+Copper products#p27.44#188#37#112#3#21
+Secondary copper for treatment, Re-processing of secondary copper into new copper#p27.44.w#189#37#113#3#21
+Other non-ferrous metal products#p27.45#190#37#114#3#21
+Secondary other non-ferrous metals for treatment, Re-processing of secondary other non-ferrous metals into new other non-ferrous metals#p27.45.w#191#37#115#3#21
+Foundry work services#p27.5#192#37#116#3#21
+Fabricated metal products, except machinery and equipment#p28#193#38#117#3#22
+Machinery and equipment n.e.c.#p29#194#39#118#3#23
+Office machinery and computers#p30#195#40#119#3#24
+Electrical machinery and apparatus n.e.c.#p31#196#41#120#3#25
+Radio, television and communication equipment and apparatus#p32#197#42#121#3#26
+Medical, precision and optical instruments, watches and clocks#p33#198#43#122#3#27
+Motor vehicles, trailers and semi-trailers#p34#199#44#123#3#28
+Other transport equipment#p35#200#45#124#3#29
+Furniture; other manufactured goods n.e.c.#p36#201#46#125#3#30
+Secondary raw materials#p37#202#47#126#3#31
+Bottles for treatment, Recycling of bottles by direct reuse#p37.w.1#203#47#127#3#31
+Electricity by coal#p40.11.a#204#48#128#3#32
+Electricity by gas#p40.11.b#205#48#129#3#32
+Electricity by nuclear#p40.11.c#206#48#130#3#32
+Electricity by hydro#p40.11.d#207#48#131#3#32
+Electricity by wind#p40.11.e#208#48#132#3#32
+Electricity by petroleum and other oil derivatives#p40.11.f#209#48#133#3#32
+Electricity by biomass and waste#p40.11.g#210#48#134#3#32
+Electricity by solar photovoltaic#p40.11.h#211#48#135#3#32
+Electricity by solar thermal#p40.11.i#212#48#136#3#32
+Electricity by tide, wave, ocean#p40.11.j#213#48#137#3#32
+Electricity by Geothermal#p40.11.k#214#48#138#3#32
+Electricity nec#p40.11.l#215#48#139#3#32
+Transmission services of electricity#p40.12#216#48#140#3#32
+Distribution and trade services of electricity#p40.13#217#48#141#3#32
+Coke oven gas#p40.2.a#218#48#142#3#32
+Blast Furnace Gas#p40.2.b#219#48#143#3#32
+Oxygen Steel Furnace Gas#p40.2.c#220#48#144#3#32
+Gas Works Gas#p40.2.d#221#48#145#3#32
+Biogas#p40.2.e#222#48#146#3#32
+Distribution services of gaseous fuels through mains#p40.2.1#223#48#147#3#32
+Steam and hot water supply services#p40.3#224#48#148#3#32
+Collected and purified water, distribution services of water#p41#225#49#149#3#33
+Construction work#p45#226#50#150#3#34
+Secondary construction material for treatment, Re-processing of secondary construction material into aggregates#p45.w#227#50#151#3#34
+Sale, maintenance, repair of motor vehicles, motor vehicles parts, motorcycles, motor cycles parts and accessoiries#p50.a#228#51#152#3#35
+Retail trade services of motor fuel#p50.b#229#51#153#3#35
+Wholesale trade and commission trade services, except of motor vehicles and motorcycles#p51#230#52#154#3#36
+Retail  trade services, except of motor vehicles and motorcycles; repair services of personal and household goods#p52#231#53#155#3#37
+Hotel and restaurant services#p55#232#54#156#3#38
+Railway transportation services#p60.1#233#55#157#3#39
+Other land transportation services#p60.2#234#55#158#3#39
+Transportation services via pipelines#p60.3#235#55#159#3#39
+Sea and coastal water transportation services#p61.1#236#56#160#3#40
+Inland water transportation services#p61.2#237#56#161#3#40
+Air transport services#p62#238#57#162#3#41
+Supporting and auxiliary transport services; travel agency services#p63#239#58#163#3#42
+Post and telecommunication services#p64#240#59#164#3#43
+Financial intermediation services, except insurance and pension funding services#p65#241#60#165#3#44
+Insurance and pension funding services, except compulsory social security services#p66#242#61#166#3#45
+Services auxiliary to financial intermediation#p67#243#62#167#3#46
+Real estate services#p70#244#63#168#3#47
+Renting services of machinery and equipment without operator and of personal and household goods#p71#245#64#169#3#48
+Computer and related services#p72#246#65#170#3#49
+Research and development services#p73#247#66#171#3#50
+Other business services#p74#248#67#172#3#51
+Public administration and defence services; compulsory social security services#p75#249#68#173#3#52
+Education services#p80#250#69#174#3#53
+Health and social work services#p85#251#70#175#3#54
+Food waste for treatment: incineration#p90.1.a#252#71#176#3#55
+Paper waste for treatment: incineration#p90.1.b#253#71#177#3#55
+Plastic waste for treatment: incineration#p90.1.c#254#71#178#3#55
+Intert/metal waste for treatment: incineration#p90.1.d#255#71#179#3#55
+Textiles waste for treatment: incineration#p90.1.e#256#71#180#3#55
+Wood waste for treatment: incineration#p90.1.f#257#71#181#3#55
+Oil/hazardous waste for treatment: incineration#p90.1.g#258#71#182#3#55
+Food waste for treatment: biogasification and land application#p90.2.a#259#71#183#3#55
+Paper waste for treatment: biogasification and land application#p90.2.b#260#71#184#3#55
+Sewage sludge for treatment: biogasification and land application#p90.2.c#261#71#185#3#55
+Food waste for treatment: composting and land application#p90.3.a#262#71#186#3#55
+Paper and wood waste for treatment: composting and land application#p90.3.b#263#71#187#3#55
+Food waste for treatment: waste water treatment#p90.4.a#264#71#188#3#55
+Other waste for treatment: waste water treatment#p90.4.b#265#71#189#3#55
+Food waste for treatment: landfill#p90.5.a#266#71#190#3#55
+Paper for treatment: landfill#p90.5.b#267#71#191#3#55
+Plastic waste for treatment: landfill#p90.5.c#268#71#192#3#55
+Inert/metal/hazardous waste for treatment: landfill#p90.5.d#269#71#193#3#55
+Textiles waste for treatment: landfill#p90.5.e#270#71#194#3#55
+Wood waste for treatment: landfill#p90.5.f#271#71#195#3#55
+Membership organisation services n.e.c.#p91#272#72#196#3#56
+Recreational, cultural and sporting services#p92#273#73#197#3#57
+Other services#p93#274#74#198#3#58
+Private households with employed persons#p95#275#75#199#3#59
+Extra-territorial organizations and bodies#p99#276#76#200#3#60

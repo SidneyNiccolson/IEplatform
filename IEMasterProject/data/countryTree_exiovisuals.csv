@@ -1,0 +1,56 @@
+Name,Code,Id,Parent_Id,Local,Level
+Total,total,1,NULL,0,0
+Europe,T_WE,2,1,0,1
+Middle-East,T_WM,3,1,1,1
+America,T_WL,4,1,2,1
+Asia-Pacific,T_WA,5,1,3,1
+Africa,WF,6,1,4,1
+Austria,AT,8,2,0,2
+Belgium,BE,9,2,1,2
+Bulgaria,BG,10,2,2,2
+Cyprus,CY,11,3,3,2
+Czech Republic,CZ,12,2,4,2
+Germany,DE,13,2,5,2
+Denmark,DK,14,2,6,2
+Estonia,EE,15,2,7,2
+Spain,ES,16,2,8,2
+Finland,FI,17,2,9,2
+France,FR,18,2,10,2
+Greece,GR,19,2,11,2
+Croatia,HR,20,2,12,2
+Hungary,HU,21,2,13,2
+Ireland,IE,22,2,14,2
+Italy,IT,23,2,15,2
+Lithuania,LT,24,2,16,2
+Luxembourg,LU,25,2,17,2
+Latvia,LV,26,2,18,2
+Malta,MT,27,2,19,2
+Netherlands,NL,28,2,20,2
+Poland,PL,29,2,21,2
+Portugal,PT,30,2,22,2
+Romania,RO,31,2,23,2
+Sweden,SE,32,2,24,2
+Slovenia,SI,33,2,25,2
+Slovakia,SK,34,2,26,2
+United Kingdom,GB,35,2,27,2
+United States,US,36,4,28,2
+Japan,JP,37,5,29,2
+China,CN,38,5,30,2
+Canada,CA,39,4,31,2
+South Korea,KR,40,5,32,2
+Brazil,BR,41,4,33,2
+India,IN,42,5,34,2
+Mexico,MX,43,4,35,2
+Russia,RU,44,2,36,2
+Australia,AU,45,5,37,2
+Switzerland,CH,46,2,38,2
+Turkey,TR,47,3,39,2
+Taiwan,TW,48,5,40,2
+Norway,NO,49,2,41,2
+Indonesia,ID,50,5,42,2
+South Africa,ZA,51,6,43,2
+Rest of Europe,WE,52,2,44,2
+Rest of Middle-East,WM,53,3,45,2
+Rest of America,WL,54,4,46,2
+Rest of Asia-Pacific,WA,55,5,47,2
+Rest of Africa,WF,56,6,48,2

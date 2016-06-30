@@ -1,0 +1,90 @@
+import os
+import sys
+import django
+#stuff for newer django !
+
+
+#open the Exiobase file
+def getfile():
+    #open the file
+    #*** > give the path to the file.
+    f=open('/home/chai/Downloads/final_dem.csv', 'r')
+   
+    #get the content
+    F=f.read()
+    #split (make an array where each element is determined by an enter)
+    U = F.split('\n')
+    
+
+   
+
+
+
+    #Create empty list !!!!!!! THIS IS THE WORKING LIST OF LIST WE NEED FOR EVERYTHING !!
+    L = []
+
+    #fill the empty list with the data (this time split even further by tabs)
+    for line in U:
+        L.append(line.split('#'))
+    #we only need to get co2 emissions and country names, so lets do that!
+    useFul = L[:11]
+    useFul.pop(0)
+    useFul.pop(0)
+    useFul.pop(0)
+    useFul.pop(0)
+    useFul.pop(0)
+    useFul.pop(0)
+    useFul.pop(0)
+    useFul.pop(0)
+    for x in useFul:
+        x.pop(0)
+        x.pop(0)
+        x.pop(0)
+
+    
+    return useFul
+
+
+#interface
+listInList = getfile()
+
+
+
+def populate():
+	#below an example to fill in 1 entry
+	#add_data("America", "US", 80.5)
+	
+	absDataFloat = []
+	# get all data from parsed csv
+	codeData = listInList[0]
+	labelData = listInList[1]
+	absData = listInList[2]
+		
+	codes = []
+	lst2=[]
+	# convert to get [[countryA,codeA,absA]...[..]]
+	for i,x in enumerate(absData):
+		lst2.append([item[i] for item in listInList])
+	for x in lst2:
+		#!!!!Now start adding the data iteratively
+		add_data(x[1],x[0],x[2])
+	print(codes)
+	print('Done!')
+
+
+#function that adds the data (offcourse)
+def add_data(label, code, absolute):
+    e, created = GhgEmissions.objects.get_or_create(label=label, code=code, absolute=absolute)
+
+    return e
+
+
+# Start execution here!
+if __name__ == '__main__':
+    print ("Starting IEMasterProject population script...")
+	
+    
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'IEMasterProject.settings')
+    django.setup()
+    from ExioVisuals.models import GhgEmissions
+    populate()

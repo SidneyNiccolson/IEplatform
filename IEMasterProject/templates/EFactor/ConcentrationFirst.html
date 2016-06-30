@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+{% extends 'EFactor/base.html' %}
+{% load static %}
+
+<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+           <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+
+</head>
+
+
+
+{% block title %} Concentration-based analysis {% endblock %}
+
+ {% block body_block %}
+
+<div class="progress">
+  <div class="progress-bar progress-bar-warning progress-bar-striped active" role="progressbar" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100" style="width: 33%">
+    Enter input amounts...
+  </div>
+</div>
+<form action="buildForm" method="get">
+        <fieldset>
+            <legend>Enter the amount of reactant(s) for the analysis</legend>
+
+            <label for="reactantAmount">Type an amount (min=1,max=30): </label> <br>
+            <input id="reactantAmount" type="text" name="reactantAmount"> <br>
+            <legend>Enter the amount of auxilliaries for the analysis</legend>
+            <label for="auxAmount">Type an amount (max=30, if none enter 0 and continue): </label><br>
+            <input id="auxAmount" type="text" name="auxAmount"> <br>
+            <legend>Enter the amount of solvent(s) for the analysis</legend>
+            <label for="solvAmount">Type an amount (max=30, if none enter 0 and continue): </label><br>
+            <input id="solvAmount" type="text" name="solvAmount"> <br>
+            <br><br>
+            <center>
+    <a href="javascript:history.back()">
+                        <span class="glyphicon glyphicon-menu-left" aria-hidden="true" >
+                  Go back</span></a>
+
+            <input type="submit" class="btn btn-info" value="Continue">
+            <span class="glyphicon glyphicon-menu-right" aria-hidden="true" >
+           </span></center>
+        </fieldset>
+        </form>
+
+ {% endblock %}
+
+
+
+
+
+
+
+
+
+
+       </div>
+
+</html>

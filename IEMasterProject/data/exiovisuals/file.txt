@@ -1,0 +1,254 @@
+*** Starting script ***
+start of script the usage is (in MB): 48.252
+*** Loading file of year: 1995 ***
+*** Retrieving arrays y,b,h,leo *** 804.648
+after retrieval of arrays the usage is (MB): 804.648
+finished
+Loading time taken: 6.317221164703369
+*** Populating final demand emissions db of year: 1995 ***
+shape of y:
+(6, 3)
+shape of leo:
+(6, 6)
+shape of b:
+(1, 6)
+shape of h:
+(1, 3)
+Final demand population time taken: 0.0028629302978515625
+*** Populating footprint db of year: 1995 ***
+(6, 6)
+(6, 6)
+before calculating the usage is (MB): 804.648
+after calculating the usage is (MB): 804.648
+populating at loop: 1995  populating at region: 0
+after writing the usage is (MB): 804.648
+past populating at:0
+Product b, Leo and y time taken + reshape: 0.004195213317871094
+Filename: HDf5builtv2.py
+
+Line #    Mem usage    Increment   Line Contents
+================================================
+    33     46.5 MiB      0.0 MiB   @profile
+    34                             def populate():
+    35                                 #create log file
+    36     46.5 MiB      0.0 MiB       log = open('/home/chai/data/log.txt', 'w')
+    37                             
+    38                             
+    39                                 #create year ranges and totals
+    40                                 year =  [
+    41     46.5 MiB      0.0 MiB                   "1995",
+    42     46.5 MiB      0.0 MiB                   "1996",
+    43     46.5 MiB      0.0 MiB               "1997",
+    44     46.5 MiB      0.0 MiB               "1998",
+    45     46.5 MiB      0.0 MiB               "1999",
+    46     46.5 MiB      0.0 MiB               "2000",
+    47     46.5 MiB      0.0 MiB               "2001",
+    48     46.5 MiB      0.0 MiB               "2002",
+    49     46.5 MiB      0.0 MiB               "2003",
+    50     46.5 MiB      0.0 MiB               "2004",
+    51     46.5 MiB      0.0 MiB               "2005",
+    52     46.5 MiB      0.0 MiB               "2006",
+    53     46.5 MiB      0.0 MiB               "2007",
+    54     46.5 MiB      0.0 MiB               "2008",
+    55     46.5 MiB      0.0 MiB                "2009",
+    56     46.5 MiB      0.0 MiB               "2010",
+    57     46.5 MiB      0.0 MiB               "2011",
+    58                                             ];
+    59     46.5 MiB      0.0 MiB       year = np.arange(1995,2012)
+    60     46.5 MiB      0.0 MiB       year = np.arange(1995,1996)
+    61                             
+    62                                 #create regions and sectors ranges
+    63                                 #number of years
+    64     46.5 MiB      0.0 MiB       nt = 17
+    65                                 #number of regions
+    66     46.5 MiB      0.0 MiB       nr = 49
+    67                                 #number of sectors
+    68     46.5 MiB      0.0 MiB       ns = 200
+    69                                 #number of final demand categories
+    70     46.5 MiB      0.0 MiB       nf = 7
+    71                             
+    72                             
+    73     47.1 MiB      0.6 MiB       with h5py.File('/home/chai/data/built_exio.hdf5','w') as f:
+    74                             
+    75                                 #create hdf dataset with dimension nt * nr * ns * nr * ns * nr for footprint of consumption
+    76                                 #and a smaller one for emissions of final demand just with nt * ns
+    77                                 #total of two datasets
+    78                             
+    79                                     #populate
+    80                             
+    81     47.1 MiB      0.0 MiB           print("*** Starting script ***")
+    82     47.1 MiB      0.0 MiB           log.write("*** Starting script ***\n")
+    83     47.1 MiB      0.0 MiB           mem = resource.getrusage(resource.RUSAGE_SELF).ru_maxrss  / 1000
+    84     47.1 MiB      0.0 MiB           print( "start of script the usage is (in MB):",mem)
+    85     47.1 MiB      0.0 MiB           log.write("start of script the usage is (in MB):%s" % str(mem))
+    86                                     #run loop for year
+    87    782.7 MiB    735.5 MiB           for i, x in enumerate(year):
+    88                                     #read stuff from matlab binary
+    89     47.1 MiB   -735.5 MiB               print("*** Loading file of year: "+ str(x)+ " ***")
+    90     47.1 MiB      0.0 MiB               log.write("\n*** Loading file of year: "+ str(x)+ " ***\n")
+    91     47.1 MiB      0.0 MiB               t0 = time.time()
+    92                             
+    93    785.8 MiB    738.7 MiB               mat = scipy.io.loadmat('/home/chai/data/sys_leo_%s.mat' % x) #%insert i in name
+    94                             
+    95    785.8 MiB      0.0 MiB               print("*** Retrieving arrays y,b,h,leo ***", resource.getrusage(resource.RUSAGE_SELF).ru_maxrss  / 1000)
+    96    785.8 MiB      0.0 MiB               log.write("*** Retrieving arrays y,b,h,leo ***\n")
+    97                             
+    98                             
+    99    785.8 MiB      0.0 MiB               y = mat['io']['y'][0][0];
+   100    785.8 MiB      0.0 MiB               leo = mat['io']['leo'][0][0];
+   101    785.8 MiB      0.0 MiB               b = mat['io']['b'][0][0];
+   102    785.8 MiB      0.0 MiB               h = mat['io']['h'][0][0];
+   103                             
+   104                                     #THIS IS A FIX BECAUSE EMISSIONS FROM HOUSEHOLDS
+   105                                     #ITERATE OVER FINAL DEMAND CATEGORIES!!!!
+   106    785.8 MiB      0.0 MiB               h = np.reshape(h, (nr, nf))[:,0]
+   107                             
+   108    785.8 MiB      0.0 MiB               h = h.reshape(1,nr)
+   109    785.8 MiB      0.0 MiB               mem = resource.getrusage(resource.RUSAGE_SELF).ru_maxrss  / 1000
+   110    785.8 MiB      0.0 MiB               print( "after retrieval of arrays the usage is (MB):",mem)
+   111    785.8 MiB      0.0 MiB               log.write("after retrieval of arrays the usage is (MB):%s \n" % str(mem))
+   112                                         #create regions and sectors ranges
+   113                                         #number of years
+   114    785.8 MiB      0.0 MiB               nt = 17
+   115                                         #number of regions
+   116    785.8 MiB      0.0 MiB               nr = 3
+   117                                         #number of sectors
+   118    785.8 MiB      0.0 MiB               ns = 2
+   119                                         #number of final demand categories
+   120    785.8 MiB      0.0 MiB               nf = 1
+   121                             
+   122                             
+   123    785.8 MiB      0.0 MiB               footprint_dset = f.create_dataset('Footprint', (nt, nr, ns, nr, ns, nr), dtype = 'f')
+   124    785.8 MiB      0.0 MiB               finalDemand_dset = f.create_dataset('Final_demand', (nt,nr),dtype='f')
+   125                             
+   126                             
+   127    785.8 MiB      0.0 MiB               y = y[0:nr*ns,0:nr*nf]
+   128                             
+   129    785.8 MiB      0.0 MiB               leo = leo[0:nr*ns,0:nr*ns]
+   130    785.8 MiB      0.0 MiB               b = b[0:1,0:nr*ns]
+   131    785.8 MiB      0.0 MiB               h = h[0:1,0:nr]
+   132    785.8 MiB      0.0 MiB               print("finished")
+   133    785.8 MiB      0.0 MiB               del(mat)
+   134                             
+   135                             
+   136    785.8 MiB      0.0 MiB               t1 = time.time()
+   137    785.8 MiB      0.0 MiB               total = t1-t0
+   138    785.8 MiB      0.0 MiB               print("Loading time taken: "+str(total))
+   139    785.8 MiB      0.0 MiB               log.write("Loading time taken: "+str(total)+ "\n")
+   140                             
+   141    785.8 MiB      0.0 MiB               t0 = time.time()
+   142                                     #populating the final demand emissions database
+   143    785.8 MiB      0.0 MiB               print("*** Populating final demand emissions db of year: "+ str(x)+ " ***")
+   144    785.8 MiB      0.0 MiB               log.write("*** Populating final demand emissions db of year: "+ str(x)+ " ***\n")
+   145                                         #X =  x+1
+   146    785.8 MiB      0.0 MiB               print("shape of y:")
+   147    785.8 MiB      0.0 MiB               print(y.shape)
+   148    785.8 MiB      0.0 MiB               print("shape of leo:")
+   149    785.8 MiB      0.0 MiB               print(leo.shape)
+   150    785.8 MiB      0.0 MiB               print("shape of b:")
+   151    785.8 MiB      0.0 MiB               print(b.shape)
+   152    785.8 MiB      0.0 MiB               print("shape of h:")
+   153    785.8 MiB      0.0 MiB               print(h.shape)
+   154                             
+   155                                         #try to fill in the final demand dataset with at coordinate i the array
+   156    785.8 MiB      0.0 MiB               finalDemand_dset[i,:] = h
+   157                             
+   158                             
+   159    785.8 MiB      0.0 MiB               t1 = time.time()
+   160    785.8 MiB      0.0 MiB               total = t1-t0
+   161    785.8 MiB      0.0 MiB               print("Final demand population time taken: "+str(total))
+   162    785.8 MiB      0.0 MiB               log.write("Final demand population time taken: "+str(total)+"\n")
+   163                                     #nested make calculations by country of demand
+   164    785.8 MiB      0.0 MiB               print("*** Populating footprint db of year: "+ str(x)+ " ***")
+   165    785.8 MiB      0.0 MiB               log.write("*** Populating footprint db of year: "+ str(x)+ " ***\n")
+   166                                     #diagonal direct impact vector
+   167    785.8 MiB      0.0 MiB               bDiag = np.diag(b[0])
+   168                             
+   169                             
+   170                             
+   171                                         #print(bDiag[0][0])
+   172                                         #0.0000000000001 sort of to check for zero's
+   173    785.8 MiB      0.0 MiB               accuracy = 1e-16
+   174    785.8 MiB      0.0 MiB               test = []
+   175                             
+   176                                         #print(len(test))
+   177    785.8 MiB      0.0 MiB               print(bDiag.shape)
+   178                                         #dgl = np.diag_indices(9800)
+   179                                         #bDiagVector = bDiag[dgl]
+   180    785.8 MiB      0.0 MiB               print(leo.shape)
+   181    785.8 MiB      0.0 MiB               t0 = time.time()
+   182                                     #iterating over import region
+   183    785.8 MiB      0.0 MiB               for j in np.arange(1):
+   184    785.8 MiB      0.0 MiB                   yDiag = np.diag(y[:,j])
+   185                                             #diagonal = np.diag_indices(9800)
+   186                                             #print(diagonal)
+   187                                             #yDiagVector = (yDiag[diagonal])
+   188    785.8 MiB      0.0 MiB                   mem = resource.getrusage(resource.RUSAGE_SELF).ru_maxrss  / 1000
+   189    785.8 MiB      0.0 MiB                   print( "before calculating the usage is (MB):",mem)
+   190    785.8 MiB      0.0 MiB                   log.write("before calculating the usage is (MB):%s \n" % str(mem))
+   191    785.8 MiB      0.0 MiB                   foot = mult_diag(yDiag,leo)
+   192    785.8 MiB      0.0 MiB                   foot = mult_diag(bDiag,foot)
+   193    785.8 MiB      0.0 MiB                   mem = resource.getrusage(resource.RUSAGE_SELF).ru_maxrss  / 1000
+   194    785.8 MiB      0.0 MiB                   print( "after calculating the usage is (MB):",mem)
+   195    785.8 MiB      0.0 MiB                   log.write("after calculating the usage is (MB):%s \n" % str(mem))
+   196                             
+   197                                             #do the multiplication of leontief times the y diagonal
+   198                                             #dotLy = np.dot(leo,yDiag)
+   199                                             #foot = np.dot(bDiag, dotLy)
+   200                                             #print(bDiag)
+   201                                             #foot = bDiag * leo * yDiag
+   202                             
+   203    785.8 MiB      0.0 MiB                   foot_tmp = np.reshape(foot,[nr,ns,nr,ns])
+   204                                             #print(foot_tmp[0][0][1][1])
+   205                                             #print(foot[0 + ns * 0][1 + ns * 1])
+   206                                             #check if foot_tmp[i1][j1][i2][j2] is equal
+   207                                             # to foot[j1 + ns * i1][j2 + ns * i2]
+   208                             
+   209                                             #if check holds then paste into dset
+   210    785.8 MiB      0.0 MiB                   print("populating at loop: "+str(x)+ "  populating at region: " +str(j))
+   211    785.8 MiB      0.0 MiB                   footprint_dset[i,:,:,:,:,j] = foot_tmp
+   212    785.8 MiB      0.0 MiB                   mem = resource.getrusage(resource.RUSAGE_SELF).ru_maxrss  / 1000
+   213    785.8 MiB      0.0 MiB                   print( "after writing the usage is (MB):",mem)
+   214    785.8 MiB      0.0 MiB                   log.write("after writing the usage is (MB):%s \n" % str(mem))
+   215    785.8 MiB      0.0 MiB                   print("past populating at:"+str(j))
+   216                             
+   217                                         #log.write("A foot.shape example of last element in for loop: "+str(foot.shape)+"\n")
+   218                                         #log.write("A foot_tmp.shape example of last element in for loop: "+str(foot_tmp.shape)+"\n")
+   219    785.8 MiB      0.0 MiB               t1 = time.time()
+   220    785.8 MiB      0.0 MiB               total = t1-t0
+   221    785.8 MiB      0.0 MiB               print("Product b, Leo and y time taken + reshape: "+str(total))
+   222    785.8 MiB      0.0 MiB               log.write("Product b, Leo and y + reshape: "+str(total)+"\n")
+   223                             
+   224                                         #memory cleanup
+   225                                         #del(mat)
+   226                             
+   227    785.8 MiB      0.0 MiB               del(h)
+   228    785.8 MiB      0.0 MiB               del(b)
+   229    782.7 MiB     -3.1 MiB               del(y)
+   230                                         #del(dotLy)
+   231    782.7 MiB      0.0 MiB               del(foot)
+   232    782.7 MiB      0.0 MiB               del(foot_tmp)
+   233    782.7 MiB      0.0 MiB               del(yDiag)
+   234    782.7 MiB      0.0 MiB               del(nr)
+   235    782.7 MiB      0.0 MiB               del(ns)
+   236    782.7 MiB      0.0 MiB               del(bDiag)
+   237                                         #del(bDiagVector)
+   238                                         #del(yDiagVector)
+   239    782.7 MiB      0.0 MiB               del(year)
+   240                                         #f.close()
+   241    782.7 MiB      0.0 MiB               f.flush()
+   242                             
+   243    782.7 MiB      0.0 MiB               f.close()
+   244    782.7 MiB      0.0 MiB               log.close()
+
+
+finished
+Filename: HDf5builtv2.py
+
+Line #    Mem usage    Increment   Line Contents
+================================================
+     5     49.9 MiB      0.0 MiB   @profile
+     6                             def finished():
+     7     49.9 MiB      0.0 MiB       print("finished")
+
+

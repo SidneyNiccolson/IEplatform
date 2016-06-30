@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+{% extends 'ExioVisuals/base.html' %}
+{% load static %}
+{% load nvd3_tags %}
+{% load bootstrap %}
+
+{% block speciality %}
+<link href="{{STATIC_URL}}fancytree/skin-bootstrap-n/ui.fancytree.css" rel="stylesheet" type="text/css"
+    class="skinswitcher">
+  <script src="{{STATIC_URL}}fancytree/src/jquery.fancytree.js" type="text/javascript"></script>
+  <script src="{{STATIC_URL}}fancytree/src/jquery.fancytree.dnd.js" type="text/javascript"></script>
+  <script src="{{STATIC_URL}}fancytree/src/jquery.fancytree.edit.js" type="text/javascript"></script>
+  <script src="{{STATIC_URL}}fancytree/src/jquery.fancytree.glyph.js" type="text/javascript"></script>
+  <script src="{{STATIC_URL}}fancytree/src/jquery.fancytree.table.js" type="text/javascript"></script>
+  <script src="{{STATIC_URL}}fancytree/src/jquery.fancytree.wide.js" type="text/javascript"></script>
+  <script src="{{STATIC_URL}}fancytree/src/jquery.fancytree.childcounter.js" type="text/javascript"></script>
+ <script src="{{STATIC_URL}}fancytree/src/jquery.fancytree.filter.js" type="text/javascript"></script>
+<script src="http://www.d3plus.org/js/d3.js"></script>
+<script src="http://www.d3plus.org/js/d3plus.js"></script>
+
+
+<!-- Add code to initialize the product tree when the document is loaded: -->
+{% include "ExioVisuals/myFancyTrees.html" %}
+
+<!--popup functionality-->
+{% if popup %}
+<script type="text/javascript">
+
+
+ $(window).load(function(){
+        $('#myModal').modal('show');
+    });
+
+</script>
+{% endif %}
+
+{% endblock %}
+
+{% block ActiveSupplychain %}
+<span class="glyphicon glyphicon-link" aria-hidden="true" style="color: #428bca;"> <u style="color:black;">SupplyChain  </u></span></a>
+</li>
+{% endblock %}
+{% block body_block %}
+
+
+<!--SHOW TREEMAP TEST         -------------------------------------------------------___-->
+
+
+<div class="alert alert-danger">
+  <strong><span class="glyphicon glyphicon-alert" aria-hidden="true"></span></strong>The supply chain is not fully implemented yet.
+</div>
+
+
+
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <center>
+        <h4 class="modal-title">ExioVisuals</h4></center>
+      </div>
+      <div class="modal-body">
+        <p>Your filter interface has been updated according to your input.</p>
+          You selected the following decomposition:<br> <strong>{{userSelectMode}}</strong>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+<div class="container" style="height:300px;">
+<div id="viz" ></div></div>
+    <script>
+
+
+  var visualization = d3plus.viz()
+    .container("#viz")
+    .edges({
+      "strength": "strength",
+      "value": {{edges|safe}}
+    })
+    .focus({
+      "tooltip": false,
+      "value": "gamma"
+    })
+    .id("id")
+    .nodes({{nodes|safe}})
+    .size(100)
+    .type("sankey")
+    .draw();
+</script>
+
+ {% endblock %}
+
+
+<!--Mode formsets-->
+{% block modeForms %}
+
+<div class="panel-body"  style="background-color:white;font-size: 12px;">
+
+<legend>Decomposition</legend>
+
+<form class="form-inline" method="post" action="../distribution/">
+     {% csrf_token %}
+<fieldset class="inlineLabels">
+    Absolute footprint of consumption split by{{ modeForm }}
+</fieldset>
+<center>
+     <button id="reload" class="btn btn-lg btn-primary btn-sm" type="submit">Reload</button></center>
+ </form>
+   </div>
+                  {% endblock %}
+
+
+
+{% block body3 %}
+<!--Send the mode in this block (no specific reason-->
+<input type="hidden" name="selectMode" value="{{ userSelectMode }}" >
+{{warning|safe}}
+Select pressures  for analysis:
+ <center>
+
+
+            <br>
+
+            <div class="btn-group" role="group" aria-label="...">
+  <button type="button" class="btn btn-primary btn-sm"href="#" id="btnsSelectAll5">Select all</button>
+  <button type="button" class="btn btn-primary btn-sm" href="#" id="btnsDeselectAll5">Deselect all</button>
+    <button type="button" id="btnsExpandAll5" class="btn btn-primary btn-sm">Expand all</button>
+      <button  type="button" id="btnsCollapseAll5" class="btn btn-primary btn-sm">Collapse all</button>
+      <button  type="button"  class="btn btn-primary btn-sm" style="background: transparent;border: none !important;
+    font-size:0;">Collapse all</button></div>
+                <br>
+                <p>
+                    <br>
+
+	</p>
+
+
+
+       <p>
+</center>
+
+
+		<div id="tree5" class="panel-body fancytree-colorize-hover fancytree-fade-expander">
+
+        </div>
+
+<!--
+<form class="form-signin" method="POST" id="MyForm" name="MyForm">
+
+    {% csrf_token %}
+    <input type="radio"  name="groupss" value="mode1" id="s"> Mode1<br>
+<input type="radio"  name="groupss" value="mode2" id="k" checked> Mode2<br>
+
+<hr>
+
+
+     <button id="reload" class="btn btn-lg btn-primary btn-block" type="submit">Reload</button>
+ </form>
+
+-->
+
+
+{% endblock %}
+
+
+{% block body4 %}
+
+{{ yearsMode1 }}
+
+
+
+
+ {% endblock %}
+{% block body5 %}
+{{warning|safe}}
+Select countries  for analysis:
+ <center>
+
+
+            <br>
+
+            <div class="btn-group" role="group" aria-label="...">
+  <button type="button" class="btn btn-primary btn-sm"href="#" id="btnsSelectAll2">Select all</button>
+  <button type="button" class="btn btn-primary btn-sm" href="#" id="btnsDeselectAll2">Deselect all</button>
+    <button type="button" id="btnsExpandAll2" class="btn btn-primary btn-sm">Expand all</button>
+      <button  type="button" id="btnsCollapseAll2" class="btn btn-primary btn-sm">Collapse all</button>
+      <button  type="button"  class="btn btn-primary btn-sm" style="background: transparent;border: none !important;
+    font-size:0;">Collapse all</button></div>
+                <br>
+                <p>
+                    <br>
+
+	</p>
+
+
+
+       <p>
+</center>
+
+
+		<div id="tree2" class="panel-body fancytree-colorize-hover fancytree-fade-expander">
+
+        </div>
+
+
+ {% endblock %}
+
+{% block body10 %}
+{{warning|safe}}
+Select countries  for analysis:
+ <center>
+
+
+            <br>
+
+            <div class="btn-group" role="group" aria-label="...">
+  <button type="button" class="btn btn-primary btn-sm"href="#" id="btnsSelectAll6">Select all</button>
+  <button type="button" class="btn btn-primary btn-sm" href="#" id="btnsDeselectAll6">Deselect all</button>
+    <button type="button" id="btnsExpandAll6" class="btn btn-primary btn-sm">Expand all</button>
+      <button  type="button" id="btnsCollapseAll6" class="btn btn-primary btn-sm">Collapse all</button>
+      <button  type="button"  class="btn btn-primary btn-sm" style="background: transparent;border: none !important;
+    font-size:0;">Collapse all</button></div>
+                <br>
+                <p>
+                    <br>
+
+	</p>
+
+
+
+       <p>
+</center>
+
+
+		<div id="tree6" class="panel-body fancytree-colorize-hover fancytree-fade-expander">
+
+        </div>
+
+
+ {% endblock %}
+
+{% block body6 %}
+{{warning|safe}}
+Select products for analysis:
+
+    <center>
+
+
+            <br>
+
+            <div class="btn-group" role="group" aria-label="...">
+  <button type="button" class="btn btn-primary btn-sm"href="#" id="btnsSelectAll">Select all</button>
+  <button type="button" class="btn btn-primary btn-sm" href="#" id="btnsDeselectAll">Deselect all</button>
+    <button type="button" id="btnsExpandAll" class="btn btn-primary btn-sm">Expand all</button>
+      <button  type="button" id="btnsCollapseAll" class="btn btn-primary btn-sm">Collapse all</button>
+      <button  type="button"  class="btn btn-primary btn-sm" style="background: transparent;border: none !important;
+    font-size:0;">Collapse all</button></div>
+                <br>
+                <p>
+                    <br>
+		<label>Search products:</label>
+		<input name="search" placeholder="Products..." autocomplete="off" >
+		<button id="btnResetSearch" hidden="hidden">&times;</button>
+		<span id="matches"></span>
+	</p>
+
+
+
+       <p>
+</center>
+
+
+		<div id="tree" class="panel-body fancytree-colorize-hover fancytree-fade-expander">
+
+        </div>
+
+
+
+
+
+
+
+    {% endblock %}
+
+{% block body7 %}
+
+
+Select countries for analysis:
+
+<center>
+
+
+            <br>
+
+            <div class="btn-group" role="group" aria-label="...">
+  <button type="button" class="btn btn-primary btn-sm"href="#" id="btnsSelectAll3">Select all</button>
+  <button type="button" class="btn btn-primary btn-sm" href="#" id="btnsDeselectAll3">Deselect all</button>
+    <button type="button" id="btnsExpandAll3" class="btn btn-primary btn-sm">Expand all</button>
+      <button  type="button" id="btnsCollapseAll3" class="btn btn-primary btn-sm">Collapse all</button>
+      <button  type="button"  class="btn btn-primary btn-sm" style="background: transparent;border: none !important;
+    font-size:0;">Collapse all</button></div>
+                <br>
+                <p>
+                    <br>
+
+	</p>
+
+
+
+       <p>
+</center>
+
+
+		<div id="tree3" class="panel-body fancytree-colorize-hover fancytree-fade-expander">
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+
+            <center>
+			<h3>Countries</h3>
+                <hr>
+            <br>
+
+            <div class="btn-group" role="group" aria-label="...">
+  <button type="button" class="btn btn-primary btn-sm"href="#" id="btnsSelectAll2">Select all</button>
+  <button type="button" class="btn btn-primary btn-sm" href="#" id="btnsDeselectAll2">Deselect all</button>
+    <button type="button" id="btnsExpandAll2" class="btn btn-primary btn-sm">Expand all</button>
+      <button  type="button" id="btnsCollapseAll2" class="btn btn-primary btn-sm">Collapse all</button>
+      <button  type="button"  class="btn btn-primary btn-sm" style="background: transparent;border: none !important;
+    font-size:0;">Collapse all</button></div>
+                <br>
+                <p>
+                    <br>
+
+	</p>
+
+
+
+       <p>
+</center>
+
+
+		<div id="tree2" class="panel-body fancytree-colorize-hover fancytree-fade-expander">
+
+        </div>
+
+
+-->
+
+<center>
+
+{% endblock %}
+
+{% block body8 %}
+   {{warning|safe}}
+   Select products for analysis:
+<center>
+
+
+            <br>
+
+            <div class="btn-group" role="group" aria-label="...">
+  <button type="button" class="btn btn-primary btn-sm"href="#" id="btnsSelectAll4">Select all</button>
+  <button type="button" class="btn btn-primary btn-sm" href="#" id="btnsDeselectAll4">Deselect all</button>
+    <button type="button" id="btnsExpandAll4" class="btn btn-primary btn-sm">Expand all</button>
+      <button  type="button" id="btnsCollapseAll4" class="btn btn-primary btn-sm">Collapse all</button>
+      <button  type="button"  class="btn btn-primary btn-sm" style="background: transparent;border: none !important;
+    font-size:0;">Collapse all</button></div>
+                <br>
+
+
+
+
+       <p>
+</center>
+
+
+		<div id="tree4" class="panel-body fancytree-colorize-hover fancytree-fade-expander">
+
+        </div>
+
+{% endblock %}
+
+{% block belowButtons %}
+<!--
+<button type="submit" class="btn btn-success btn-xs">Submit</button></p>
+</form>
+-->
+<button type="submit" class="btn btn-primary btn-sm" value="Send data">Visualize</button></p></center>
+
+ {% endblock %}

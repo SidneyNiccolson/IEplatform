@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+{% load nvd3_tags %}
+
+    {% include_chart_jscss %}
+    {% load_chart charttype chartdata chartcontainer extra %}
+
+
+{% load static %}
+
+<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="{% static 'css/bootstrap-fluid-adj.css' %}" rel="stylesheet">
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" media="screen">
+    <link href="{% static 'css/bootstrap-responsive.css' %}" rel="stylesheet">
+
+
+    <title>EFactor- {% block title %}{% endblock %}</title>
+</head>
+<body>
+
+   <div class="navbar navbar-inverse navbar-fixed-top">
+   <div class="navbar-inner">
+       <div class="container">
+           <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+           </button>
+           <a class="brand" href="/">Home</a>
+
+
+
+
+
+
+               </ul>
+               <ul class="nav">
+
+
+               </ul>
+           </div>
+           <!--/.nav-collapse -->
+       </div>
+
+   <!-- Some info on this app -->
+   <div class="hero-unit">
+
+
+       {% block body_block %}
+<h1>Title</h1>
+   {% include_container chartcontainer 200 300 %}
+       {% endblock %}
+
+</div>
+
+
+
+<!--/.fluid-container-->
+
+<hr>
+<footer>
+    <div class="container">
+
+        <!--Add a picture and center it-->
+        <center>
+         <font color="black">&copy; IE Soft-Lab 2016</font> </center>
+    </div>
+</footer>
+    <script src="{% static 'js/jquery-2.1.1.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

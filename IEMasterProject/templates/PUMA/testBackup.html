@@ -1,0 +1,171 @@
+{% load static %}
+{% load leaflet_tags %}
+{% load geojson_tags %}
+
+
+{% block extra_assets %}
+  {% leaflet_js %}
+  {% leaflet_css %}
+{% endblock %}
+
+{% block content %}
+
+
+
+{% endblock %}
+
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+<script src="https://cdn.jsdelivr.net/leaflet.esri/2.0.0-beta.8/esri-leaflet.js"></script>
+
+    <title>Interactive Map</title>
+</head>
+
+
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="http://cml.liacs.nl/softLab/PUMA">PUMA</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+
+<li class="active"><a href="/ssd">
+  <span class="glyphicon glyphicon-off" aria-hidden="true" style="color:red"> Login</span></a>
+</li>
+          <li class="active"><a href="/PUMA/map">
+  <span class=" glyphicon glyphicon-search" aria-hidden="true" > Map</span></a>
+</li>
+
+           <li class="active"><a href="http://cml.liacs.nl/softLab/about">
+  <span class="glyphicon glyphicon-info-sign" aria-hidden="true" > About</span></a>
+</li>
+
+
+
+      </ul>
+
+      </ul>
+<ul class="nav navbar-nav navbar-right">
+        <li class="active"><a href="http://cml.liacs.nl/softLab">
+  <span class="glyphicon glyphicon-home" aria-hidden="true" > Home</span></a>
+</li>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+
+
+               </ul>
+               <ul class="nav">
+
+
+               </ul>
+           </div>
+           <!--/.nav-collapse -->
+       </div>
+<div>
+
+    <div class="container"
+   <div class="row">
+  <div class="row-xs-6 col-md-x">
+    <a class="thumbnail">
+         <div class="caption" ALIGN=justify>
+      <h3 ALIGN=center>Amsterdam Interactive Map</h3>
+      Click on the regions to look on data per region. Click on markers to see hotspots.
+         </div>
+    </a>
+  </div></div>
+
+
+
+
+<style>
+
+    .leaflet-container {  /* all maps */
+        width:  1000px;
+        height: 1100px;
+    }
+
+    #specialbigmap {
+        height: 1100px;
+    }
+
+</style>
+
+<center>
+<div class="container" >
+<!--52.3667, 4.9000-->
+
+<script>
+
+
+var pointA = new L.LatLng(52.3666, 4.9001);
+var pointB = new L.LatLng(52.3665, 4.8000);
+var pointList = [pointA, pointB];
+
+var firstpolyline = new L.Polyline(pointList, {
+color: 'red',
+weight: 3,
+opacity: 0.5,
+smoothFactor: 1
+
+});
+var collection = {{ area|geojsonfeature:"colors,popupContent"|safe }};;
+var hotspot = {{ book|geojsonfeature:"popupContent"|safe }};;
+var lines = {{ line|geojsonfeature:"colors,popupContent"|safe }};;
+function onEachFeature(feature, layer) {
+    if (feature.properties && feature.properties.popupContent) {
+      layer.bindPopup(feature.properties.popupContent);
+    }
+
+  }
+
+function style(feature) {
+  return {
+     fillColor: feature.properties.colors,
+     fillOpacity: 0.5,
+     color: feature.properties.colors,
+  };
+}
+
+function map_init(map, options) {
+
+
+   L.geoJson(collection, {style: style, onEachFeature: onEachFeature}).addTo(map);
+   L.geoJson(lines, {style: style, onEachFeature: onEachFeature}).addTo(map);
+   L.geoJson(hotspot, {onEachFeature: onEachFeature}).addTo(map.fitBounds([
+    [52.4051, 4.9653],
+    [52.3372, 4.8597]
+]).setZoom(12));
+
+
+
+}
+document.getElementById("demo").innerHTML = map_init();
+
+
+</script>
+
+{% leaflet_map "yourmap" callback="window.map_init" %}
+</div></div></center>
+</body>
+
+
+</html>

@@ -1,0 +1,201 @@
+ProductTypeCode#ProductTypeName#DisplayOrder#ProductTypeSynonym#ProductGroup#ProductGroupName#ProductGroupOrder#PreferredLayer
+p01.a#Paddy rice#0#C_PARI#p01.a#Paddy rice#0#Mass
+p01.b#Wheat#1#C_WHEA#p01.b#Wheat#1#Mass
+p01.c#Cereal grains nec#2#C_OCER#p01.c#Cereal grains nec#2#Mass
+p01.d#Vegetables, fruit, nuts#3#C_FVEG#p01.d#Vegetables, fruit, nuts#3#Mass
+p01.e#Oil seeds#4#C_OILS#p01.e#Oil seeds#4#Mass
+p01.f#Sugar cane, sugar beet#5#C_SUGB#p01.f#Sugar cane, sugar beet#5#Mass
+p01.g#Plant-based fibers#6#C_FIBR#p01.g#Plant-based fibers#6#Mass
+p01.h#Crops nec#7#C_OTCR#p01.h#Crops nec#7#Mass
+p01.i#Cattle#8#C_CATL#p01.i#Cattle#8#Mass
+p01.j#Pigs#9#C_PIGS#p01.j#Pigs#9#Mass
+p01.k#Poultry#10#C_PLTR#p01.k#Poultry#10#Mass
+p01.l#Meat animals nec#11#C_OMEA#p01.l#Meat animals nec#11#Mass
+p01.m#Animal products nec#12#C_OANP#p01.m#Animal products nec#12#Mass
+p01.n#Raw milk#13#C_MILK#p01.n#Raw milk#13#Mass
+p01.o#Wool, silk-worm cocoons#14#C_WOOL#p01.o#Wool, silk-worm cocoons#14#Mass
+p01.w.1#Manure (conventional treatment)#15#C_MANC#p01.w.1#Manure (conventional treatment)#15#Mass
+p01.w.2#Manure (biogas treatment)#16#C_MANB#p01.w.2#Manure (biogas treatment)#16#Mass
+p02#Products of forestry, logging and related services#17#C_FORE#p02#Products of forestry, logging and related services#17#Mass
+p05#Fish and other fishing products; services incidental of fishing#18#C_FISH#p05#Fish and other fishing products; services incidental of fishing#18#Mass
+p10.a#Anthracite#19#C_ANTH#p10#Coal and lignite; peat#19#Mass
+p10.b#Coking Coal#20#C_COKC#p10#Coal and lignite; peat#19#Mass
+p10.c#Other Bituminous Coal#21#C_OTBC#p10#Coal and lignite; peat#19#Mass
+p10.d#Sub-Bituminous Coal#22#C_SUBC#p10#Coal and lignite; peat#19#Mass
+p10.e#Patent Fuel#23#C_PATF#p10#Coal and lignite; peat#19#Mass
+p10.f#Lignite/Brown Coal#24#C_LIBC#p10#Coal and lignite; peat#19#Mass
+p10.g#BKB/Peat Briquettes#25#C_BKBP#p10#Coal and lignite; peat#19#Mass
+p10.h#Peat#26#C_PEAT#p10#Coal and lignite; peat#19#Mass
+p11.a#Crude petroleum and services related to crude oil extraction, excluding surveying#27#C_COIL#p11.a#Crude petroleum and services related to crude oil extraction, excluding surveying#20#Mass
+p11.b#Natural gas and services related to natural gas extraction, excluding surveying#28#C_GASE#p11.b#Natural gas and services related to natural gas extraction, excluding surveying#21#Mass
+p11.b.1#Natural Gas Liquids#29#C_GASL#p11.b#Natural gas and services related to natural gas extraction, excluding surveying#21#Mass
+p11.c#Other Hydrocarbons#30#C_OGPL#p11.c#Other Hydrocarbons#22#Mass
+p12#Uranium and thorium ores#31#C_ORAN#p12#Uranium and thorium ores#23#Monetary
+p13.1#Iron ores#32#C_IRON#p13.1#Iron ores#24#Mass
+p13.20.11#Copper ores and concentrates#33#C_COPO#p13.20.11#Copper ores and concentrates#25#Mass
+p13.20.12#Nickel ores and concentrates#34#C_NIKO#p13.20.12#Nickel ores and concentrates#26#Mass
+p13.20.13#Aluminium ores and concentrates#35#C_ALUO#p13.20.13#Aluminium ores and concentrates#27#Mass
+p13.20.14#Precious metal ores and concentrates#36#C_PREO#p13.20.14#Precious metal ores and concentrates#28#Mass
+p13.20.15#Lead, zinc and tin ores and concentrates#37#C_LZTO#p13.20.15#Lead, zinc and tin ores and concentrates#29#Mass
+p13.20.16#Other non-ferrous metal ores and concentrates#38#C_ONFO#p13.20.16#Other non-ferrous metal ores and concentrates#30#Mass
+p14.1#Stone#39#C_STON#p14.1#Stone#31#Mass
+p14.2#Sand and clay#40#C_SDCL#p14.2#Sand and clay#32#Mass
+p14.3#Chemical and fertilizer minerals, salt and other mining and quarrying products n.e.c.#41#C_CHMF#p14.3#Chemical and fertilizer minerals, salt and other mining and quarrying products n.e.c.#33#Mass
+p15.a#Products of meat cattle#42#C_PCAT#p15.a#Products of meat cattle#34#Mass
+p15.b#Products of meat pigs#43#C_PPIG#p15.b#Products of meat pigs#35#Mass
+p15.c#Products of meat poultry#44#C_PPLT#p15.c#Products of meat poultry#36#Mass
+p15.d#Meat products nec#45#C_POME#p15.d#Meat products nec#37#Mass
+p15.e#products of Vegetable oils and fats#46#C_VOIL#p15.e#products of Vegetable oils and fats#38#Mass
+p15.f#Dairy products#47#C_DAIR#p15.f#Dairy products#39#Mass
+p15.g#Processed rice#48#C_RICE#p15.g#Processed rice#40#Mass
+p15.h#Sugar#49#C_SUGR#p15.h#Sugar#41#Mass
+p15.i#Food products nec#50#C_OFOD#p15.i#Food products nec#42#Mass
+p15.j#Beverages#51#C_BEVR#p15.j#Beverages#43#Mass
+p15.k#Fish products#52#C_FSHP#p15.k#Fish products#44#Mass
+p16#Tobacco products#53#C_TOBC#p16#Tobacco products#45#Mass
+p17#Textiles#54#C_TEXT#p17#Textiles#46#Mass
+p18#Wearing apparel; furs#55#C_GARM#p18#Wearing apparel; furs#47#Mass
+p19#Leather and leather products#56#C_LETH#p19#Leather and leather products#48#Mass
+p20#Wood and products of wood and cork (except furniture); articles of straw and plaiting materials#57#C_WOOD#p20#Wood and products of wood and cork (except furniture); articles of straw and plaiting materials#49#Mass
+p20.w#Wood material for treatment, Re-processing of secondary wood material into new wood material#58#C_WOOW#p20.w#Wood material for treatment, Re-processing of secondary wood material into new wood material#50#Mass
+p21.1#Pulp#59#C_PULP#p21.1#Pulp#51#Mass
+p21.w.1#Secondary paper for treatment, Re-processing of secondary paper into new pulp#60#C_PAPR#p21.w.1#Secondary paper for treatment, Re-processing of secondary paper into new pulp#52#Mass
+p21.2#Paper and paper products#61#C_PAPE#p21.2#Paper and paper products#53#Mass
+p22#Printed matter and recorded media#62#C_MDIA#p22#Printed matter and recorded media#54#Mass
+p23.1.a#Coke Oven Coke#63#C_COKE#p23.1#Coke oven products#55#Mass
+p23.1.b#Gas Coke#64#C_GCOK#p23.1#Coke oven products#55#Mass
+p23.1.c#Coal Tar#65#C_COTA#p23.1#Coke oven products#55#Mass
+p23.20.a#Motor Gasoline#66#C_MGSL#p23.2#Petroleum Refinery#56#Mass
+p23.20.b#Aviation Gasoline#67#C_AGSL#p23.2#Petroleum Refinery#56#Mass
+p23.20.c#Gasoline Type Jet Fuel#68#C_GJET#p23.2#Petroleum Refinery#56#Mass
+p23.20.d#Kerosene Type Jet Fuel#69#C_KJET#p23.2#Petroleum Refinery#56#Mass
+p23.20.e#Kerosene#70#C_KERO#p23.2#Petroleum Refinery#56#Mass
+p23.20.f#Gas/Diesel Oil#71#C_DOIL#p23.2#Petroleum Refinery#56#Mass
+p23.20.g#Heavy Fuel Oil#72#C_FOIL#p23.2#Petroleum Refinery#56#Mass
+p23.20.h#Refinery Gas#73#C_RGAS#p23.2#Petroleum Refinery#56#Mass
+p23.20.i#Liquefied Petroleum Gases (LPG)#74#C_LPGA#p23.2#Petroleum Refinery#56#Mass
+p23.20.j#Refinery Feedstocks#75#C_REFF#p23.2#Petroleum Refinery#56#Mass
+p23.20.k#Ethane#76#C_ETHA#p23.2#Petroleum Refinery#56#Mass
+p23.20.l#Naphtha#77#C_NAPT#p23.2#Petroleum Refinery#56#Mass
+p23.20.m#White Spirit & SBP#78#C_WHSP#p23.2#Petroleum Refinery#56#Mass
+p23.20.n#Lubricants#79#C_LUBR#p23.2#Petroleum Refinery#56#Mass
+p23.20.o#Bitumen#80#C_BITU#p23.2#Petroleum Refinery#56#Mass
+p23.20.p#Paraffin Waxes#81#C_PARW#p23.2#Petroleum Refinery#56#Mass
+p23.20.q#Petroleum Coke#82#C_PETC#p23.2#Petroleum Refinery#56#Mass
+p23.20.r#Non-specified Petroleum Products#83#C_NSPP#p23.2#Petroleum Refinery#56#Mass
+p23.3#Nuclear fuel#84#C_NUCF#p23.3#Nuclear fuel#57#Monetary
+p24.a#Plastics, basic#85#C_PLAS#p24#Chemicals, chemical products and man-made fibres#58#Mass
+p24.a.w#Secondary plastic for treatment, Re-processing of secondary plastic into new plastic#86#C_PLAW#p24#Chemicals, chemical products and man-made fibres#58#Mass
+p24.b#N-fertiliser#87#C_NFER#p24#Chemicals, chemical products and man-made fibres#58#Mass
+p24.c#P- and other fertiliser#88#C_PFER#p24#Chemicals, chemical products and man-made fibres#58#Mass
+p24.d#Chemicals nec#89#C_CHEM#p24#Chemicals, chemical products and man-made fibres#58#Mass
+p24.e#Charcoal#90#C_CHAR#p24#Chemicals, chemical products and man-made fibres#58#Mass
+p24.f#Additives/Blending Components#91#C_ADDC#p24#Chemicals, chemical products and man-made fibres#58#Mass
+p24.g#Biogasoline#92#C_BIOG#p24#Chemicals, chemical products and man-made fibres#58#Mass
+p24.h#Biodiesels#93#C_BIOD#p24#Chemicals, chemical products and man-made fibres#58#Mass
+p24.i#Other Liquid Biofuels#94#C_OBIO#p24#Chemicals, chemical products and man-made fibres#58#Mass
+p25#Rubber and plastic products#95#C_RUBP#p25#Rubber and plastic products#59#Mass
+p26.a#Glass and glass products#96#C_GLAS#p26.a#Glass and glass products#60#Mass
+p26.a.w#Secondary glass for treatment, Re-processing of secondary glass into new glass#97#C_GLAW#p26.a.w#Secondary glass for treatment, Re-processing of secondary glass into new glass#61#Mass
+p26.b#Ceramic goods#98#C_CRMC#p26.b#Ceramic goods#62#Mass
+p26.c#Bricks, tiles and construction products, in baked clay#99#C_BRIK#p26.c#Bricks, tiles and construction products, in baked clay#63#Mass
+p26.d#Cement, lime and plaster#100#C_CMNT#p26.d#Cement, lime and plaster#64#Mass
+p26.d.w#Ash for treatment, Re-processing of ash into clinker#101#C_ASHW#p26.d.w#Ash for treatment, Re-processing of ash into clinker#65#Mass
+p26.e#Other non-metallic mineral products#102#C_ONMM#p26.e#Other non-metallic mineral products#66#Mass
+p27.a#Basic iron and steel and of ferro-alloys and first products thereof#103#C_STEL#p27.a#Basic iron and steel and of ferro-alloys and first products thereof#67#Mass
+p27.a.w#Secondary steel for treatment, Re-processing of secondary steel into new steel#104#C_STEW#p27.a.w#Secondary steel for treatment, Re-processing of secondary steel into new steel#68#Mass
+p27.41#Precious metals#105#C_PREM#p27.41#Precious metals#69#Mass
+p27.41.w#Secondary preciuos metals for treatment, Re-processing of secondary preciuos metals into new preciuos metals#106#C_PREW#p27.41.w#Secondary preciuos metals for treatment, Re-processing of secondary preciuos metals into new preciuos metals#70#Mass
+p27.42#Aluminium and aluminium products#107#C_ALUM#p27.42#Aluminium and aluminium products#71#Mass
+p27.42.w#Secondary aluminium for treatment, Re-processing of secondary aluminium into new aluminium#108#C_ALUW#p27.42.w#Secondary aluminium for treatment, Re-processing of secondary aluminium into new aluminium#72#Mass
+p27.43#Lead, zinc and tin and products thereof#109#C_LZTP#p27.43#Lead, zinc and tin and products thereof#73#Mass
+p27.43.w#Secondary lead for treatment, Re-processing of secondary lead into new lead#110#C_LZTW#p27.43.w#Secondary lead for treatment, Re-processing of secondary lead into new lead#74#Mass
+p27.44#Copper products#111#C_COPP#p27.44#Copper products#75#Mass
+p27.44.w#Secondary copper for treatment, Re-processing of secondary copper into new copper#112#C_COPW#p27.44.w#Secondary copper for treatment, Re-processing of secondary copper into new copper#76#Mass
+p27.45#Other non-ferrous metal products#113#C_ONFM#p27.45#Other non-ferrous metal products#77#Mass
+p27.45.w#Secondary other non-ferrous metals for treatment, Re-processing of secondary other non-ferrous metals into new other non-ferrous metals#114#C_ONFW#p27.45.w#Secondary other non-ferrous metals for treatment, Re-processing of secondary other non-ferrous metals into new other non-ferrous metals#78#Mass
+p27.5#Foundry work services#115#C_METC#p27.5#Foundry work services#79#Monetary
+p28#Fabricated metal products, except machinery and equipment#116#C_FABM#p28#Fabricated metal products, except machinery and equipment#80#Mass
+p29#Machinery and equipment n.e.c.#117#C_MACH#p29#Machinery and equipment n.e.c.#81#Mass
+p30#Office machinery and computers#118#C_OFMA#p30#Office machinery and computers#82#Mass
+p31#Electrical machinery and apparatus n.e.c.#119#C_ELMA#p31#Electrical machinery and apparatus n.e.c.#83#Mass
+p32#Radio, television and communication equipment and apparatus#120#C_RATV#p32#Radio, television and communication equipment and apparatus#84#Mass
+p33#Medical, precision and optical instruments, watches and clocks#121#C_MEIN#p33#Medical, precision and optical instruments, watches and clocks#85#Mass
+p34#Motor vehicles, trailers and semi-trailers#122#C_MOTO#p34#Motor vehicles, trailers and semi-trailers#86#Mass
+p35#Other transport equipment#123#C_OTRE#p35#Other transport equipment#87#Mass
+p36#Furniture; other manufactured goods n.e.c.#124#C_FURN#p36#Furniture; other manufactured goods n.e.c.#88#Mass
+p37#Secondary raw materials#125#C_RYMS#p37#Recycled material#89#Monetary
+p37.w.1#Bottles for treatment, Recycling of bottles by direct reuse#126#C_BOTW#p37#Recycled material#89#Mass
+p40.11.a#Electricity by coal#127#C_POWC#p40.11.a#Electricity by coal#90#Energy
+p40.11.b#Electricity by gas#128#C_POWG#p40.11.b#Electricity by gas#91#Energy
+p40.11.c#Electricity by nuclear#129#C_POWN#p40.11.c#Electricity by nuclear#92#Energy
+p40.11.d#Electricity by hydro#130#C_POWH#p40.11.d#Electricity by hydro#93#Energy
+p40.11.e#Electricity by wind#131#C_POWW#p40.11.e#Electricity by wind#94#Energy
+p40.11.f#Electricity by petroleum and other oil derivatives#132#C_POWP#p40.11.f#Electricity by petroleum and other oil derivatives#95#Energy
+p40.11.g#Electricity by biomass and waste#133#C_POWB#p40.11.g#Electricity by biomass and waste#96#Energy
+p40.11.h#Electricity by solar photovoltaic#134#C_POWS#p40.11.h#Electricity by solar photovoltaic#97#Energy
+p40.11.i#Electricity by solar thermal#135#C_POWE#p40.11.i#Electricity by solar thermal#98#Energy
+p40.11.j#Electricity by tide, wave, ocean#136#C_POWO#p40.11.j#Electricity by tide, wave, ocean#99#Energy
+p40.11.k#Electricity by Geothermal#137#C_POWM#p40.11.k#Electricity by Geothermal#100#Energy
+p40.11.l#Electricity nec#138#C_POWZ#p40.11.l#Electricity nec#101#Energy
+p40.12#Transmission services of electricity#139#C_POWT#p40.12#Transmission services of electricity#102#Energy
+p40.13#Distribution and trade services of electricity#140#C_POWD#p40.13#Distribution and trade services of electricity#103#Energy
+p40.2.a#Coke oven gas#141#C_COOG#p40.2#Manufactured gas and distribution services of gaseous fuels through mains#104#Mass
+p40.2.b#Blast Furnace Gas#142#C_MBFG#p40.2#Manufactured gas and distribution services of gaseous fuels through mains#104#Mass
+p40.2.c#Oxygen Steel Furnace Gas#143#C_MOSG#p40.2#Manufactured gas and distribution services of gaseous fuels through mains#104#Mass
+p40.2.d#Gas Works Gas#144#C_MGWG#p40.2#Manufactured gas and distribution services of gaseous fuels through mains#104#Mass
+p40.2.e#Biogas#145#C_MBIO#p40.2#Manufactured gas and distribution services of gaseous fuels through mains#104#Mass
+p40.2.1#Distribution services of gaseous fuels through mains#146#C_GASD#p40.2#Manufactured gas and distribution services of gaseous fuels through mains#104#Monetary
+p40.3#Steam and hot water supply services#147#C_HWAT#p40.3#Steam and hot water supply services#105#Energy
+p41#Collected and purified water, distribution services of water#148#C_WATR#p41#Collected and purified water, distribution services of water#106#Monetary
+p45#Construction work#149#C_CONS#p45#Construction work#107#Monetary
+p45.w#Secondary construction material for treatment, Re-processing of secondary construction material into aggregates#150#C_CONW#p45.w#Secondary construction material for treatment, Re-processing of secondary construction material into aggregates#108#Mass
+p50.a#Sale, maintenance, repair of motor vehicles, motor vehicles parts, motorcycles, motor cycles parts and accessoiries#151#C_TDMO#p50.a#Sale, maintenance, repair of motor vehicles, motor vehicles parts, motorcycles, motor cycles parts and accessoiries#109#Monetary
+p50.b#Retail trade services of motor fuel#152#C_TDFU#p50.b#Retail trade services of motor fuel#110#Monetary
+p51#Wholesale trade and commission trade services, except of motor vehicles and motorcycles#153#C_TDWH#p51#Wholesale trade and commission trade services, except of motor vehicles and motorcycles#111#Monetary
+p52#Retail  trade services, except of motor vehicles and motorcycles; repair services of personal and household goods#154#C_TDRT#p52#Retail  trade services, except of motor vehicles and motorcycles; repair services of personal and household goods#112#Monetary
+p55#Hotel and restaurant services#155#C_HORE#p55#Hotel and restaurant services#113#Monetary
+p60.1#Railway transportation services#156#C_TRAI#p60.1#Railway transportation services#114#Monetary
+p60.2#Other land transportation services#157#C_TLND#p60.2#Other land transportation services#115#Monetary
+p60.3#Transportation services via pipelines#158#C_TPIP#p60.3#Transportation services via pipelines#116#Monetary
+p61.1#Sea and coastal water transportation services#159#C_TWAS#p61#Water transport services#117#Monetary
+p61.2#Inland water transportation services#160#C_TWAI#p61#Water transport services#117#Monetary
+p62#Air transport services#161#C_TAIR#p62#Air transport services#118#Monetary
+p63#Supporting and auxiliary transport services; travel agency services#162#C_TAUX#p63#Supporting and auxiliary transport services; travel agency services#119#Monetary
+p64#Post and telecommunication services#163#C_PTEL#p64#Post and telecommunication services#120#Monetary
+p65#Financial intermediation services, except insurance and pension funding services#164#C_FINT#p65#Financial intermediation services, except insurance and pension funding services #121#Monetary
+p66#Insurance and pension funding services, except compulsory social security services#165#C_FINS#p66#Insurance and pension funding services, except compulsory social security services#122#Monetary
+p67#Services auxiliary to financial intermediation#166#C_FAUX#p67#Services auxiliary to financial intermediation#123#Monetary
+p70#Real estate services#167#C_REAL#p70#Real estate services#124#Monetary
+p71#Renting services of machinery and equipment without operator and of personal and household goods#168#C_MARE#p71#Renting services of machinery and equipment without operator and of personal and household goods#125#Monetary
+p72#Computer and related services#169#C_COMP#p72#Computer and related services#126#Monetary
+p73#Research and development services#170#C_RESD#p73#Research and development services #127#Monetary
+p74#Other business services#171#C_OBUS#p74#Other business services#128#Monetary
+p75#Public administration and defence services; compulsory social security services#172#C_PADF#p75#Public administration and defence services; compulsory social security services#129#Monetary
+p80#Education services#173#C_EDUC#p80#Education services#130#Monetary
+p85#Health and social work services#174#C_HEAL#p85#Health and social work services#131#Monetary
+p90.1.a#Food waste for treatment: incineration#175#C_INCF#p90#Sewage and refuse disposal service, sanitation and similar service#132#Mass
+p90.1.b#Paper waste for treatment: incineration#176#C_INCP#p90#Sewage and refuse disposal service, sanitation and similar service#132#Mass
+p90.1.c#Plastic waste for treatment: incineration#177#C_INCL#p90#Sewage and refuse disposal service, sanitation and similar service#132#Mass
+p90.1.d#Intert/metal waste for treatment: incineration#178#C_INCM#p90#Sewage and refuse disposal service, sanitation and similar service#132#Mass
+p90.1.e#Textiles waste for treatment: incineration#179#C_INCT#p90#Sewage and refuse disposal service, sanitation and similar service#132#Mass
+p90.1.f#Wood waste for treatment: incineration#180#C_INCW#p90#Sewage and refuse disposal service, sanitation and similar service#132#Mass
+p90.1.g#Oil/hazardous waste for treatment: incineration#181#C_INCO#p90#Sewage and refuse disposal service, sanitation and similar service#132#Mass
+p90.2.a#Food waste for treatment: biogasification and land application#182#C_BIOF#p90#Sewage and refuse disposal service, sanitation and similar service#132#Mass
+p90.2.b#Paper waste for treatment: biogasification and land application#183#C_BIOP#p90#Sewage and refuse disposal service, sanitation and similar service#132#Mass
+p90.2.c#Sewage sludge for treatment: biogasification and land application#184#C_BIOS#p90#Sewage and refuse disposal service, sanitation and similar service#132#Mass
+p90.3.a#Food waste for treatment: composting and land application#185#C_COMF#p90#Sewage and refuse disposal service, sanitation and similar service#132#Mass
+p90.3.b#Paper and wood waste for treatment: composting and land application#186#C_COMW#p90#Sewage and refuse disposal service, sanitation and similar service#132#Mass
+p90.4.a#Food waste for treatment: waste water treatment#187#C_WASF#p90#Sewage and refuse disposal service, sanitation and similar service#132#Mass
+p90.4.b#Other waste for treatment: waste water treatment#188#C_WASO#p90#Sewage and refuse disposal service, sanitation and similar service#132#Mass
+p90.5.a#Food waste for treatment: landfill#189#C_LANF#p90#Sewage and refuse disposal service, sanitation and similar service#132#Mass
+p90.5.b#Paper for treatment: landfill#190#C_LANP#p90#Sewage and refuse disposal service, sanitation and similar service#132#Mass
+p90.5.c#Plastic waste for treatment: landfill#191#C_LANL#p90#Sewage and refuse disposal service, sanitation and similar service#132#Mass
+p90.5.d#Inert/metal/hazardous waste for treatment: landfill#192#C_LANI#p90#Sewage and refuse disposal service, sanitation and similar service#132#Mass
+p90.5.e#Textiles waste for treatment: landfill#193#C_LANT#p90#Sewage and refuse disposal service, sanitation and similar service#132#Mass
+p90.5.f#Wood waste for treatment: landfill#194#C_LANW#p90#Sewage and refuse disposal service, sanitation and similar service#132#Mass
+p91#Membership organisation services n.e.c.#195#C_ORGA#p91#Membership organisation services n.e.c.#133#Monetary
+p92#Recreational, cultural and sporting services#196#C_RECR#p92#Recreational, cultural and sporting services#134#Monetary
+p93#Other services#197#C_OSER#p93#Other services#135#Monetary
+p95#Private households with employed persons#198#C_PRHH#p95#Private households with employed persons #136#Monetary
+p99#Extra-territorial organizations and bodies#199#C_EXTO#p99#Extra-territorial organizations and bodies#137#Monetary

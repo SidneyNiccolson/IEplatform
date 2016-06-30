@@ -1,0 +1,16 @@
+from django.core.management.base import BaseCommand
+from ExioVisuals.models import GhgEmissions
+
+class Command(BaseCommand):
+    args = '<foo bar ...>'
+    help = 'our help string comes here'
+
+    def add_data(self):
+        tlisp = GhgEmissions(label='America', code='US', absolute='80.4')
+        tlisp.save()
+
+        
+
+    def handle(self, *args, **options):
+        self.add_data()
+

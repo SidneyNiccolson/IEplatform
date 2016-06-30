@@ -1,0 +1,50 @@
+CountryCode#CountryName#DisplayOrder#CountryGroup#CountryGroupName#CountryGroupOrder
+AT#Austria#0#WE#Europe#0
+BE#Belgium#1#WE#Europe#0
+BG#Bulgaria#2#WE#Europe#0
+CY#Cyprus#3#WM#Middle East#1
+CZ#Czech Republic#4#WE#Europe#0
+DE#Germany#5#WE#Europe#0
+DK#Denmark#6#WE#Europe#0
+EE#Estonia#7#WE#Europe#0
+ES#Spain#8#WE#Europe#0
+FI#Finland#9#WE#Europe#0
+FR#France#10#WE#Europe#0
+GR#Greece#11#WE#Europe#0
+HR#Croatia#12#WE#Europe#0
+HU#Hungary#13#WE#Europe#0
+IE#Ireland#14#WE#Europe#0
+IT#Italy#15#WE#Europe#0
+LT#Lithuania#16#WE#Europe#0
+LU#Luxembourg#17#WE#Europe#0
+LV#Latvia#18#WE#Europe#0
+MT#Malta#19#WE#Europe#0
+NL#Netherlands#20#WE#Europe#0
+PL#Poland#21#WE#Europe#0
+PT#Portugal#22#WE#Europe#0
+RO#Romania#23#WE#Europe#0
+SE#Sweden#24#WE#Europe#0
+SI#Slovenia#25#WE#Europe#0
+SK#Slovakia#26#WE#Europe#0
+GB#United Kingdom#27#WE#Europe#0
+US#United States#28#WL#America#2
+JP#Japan#29#WA#Asia and Pacific#3
+CN#China#30#WA#Asia and Pacific#3
+CA#Canada#31#WL#America#2
+KR#South Korea#32#WA#Asia and Pacific#3
+BR#Brazil#33#WL#America#2
+IN#India#34#WA#Asia and Pacific#3
+MX#Mexico#35#WL#America#2
+RU#Russia#36#WE#Europe#0
+AU#Australia#37#WA#Asia and Pacific#3
+CH#Switzerland#38#WE#Europe#0
+TR#Turkey#39#WM#Middle East#1
+TW#Taiwan#40#WA#Asia and Pacific#3
+NO#Norway#41#WE#Europe#0
+ID#Indonesia#42#WA#Asia and Pacific#3
+ZA#South Africa#43#WF#Africa#4
+WA#RoW Asia and Pacific#44#WA#Asia and Pacific#3
+WL#RoW America#45#WL#America#2
+WE#RoW Europe#46#WE#Europe#0
+WF#RoW Africa#47#WF#Africa#4
+WM#RoW Middle East#48#WM#Middle East#1
