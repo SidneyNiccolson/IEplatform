@@ -27,29 +27,8 @@ ADMINS = (
 
 MANAGERS = ADMINS
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'myproject',
-        'USER': 'myprojectuser',
-        'PASSWORD': 'password',
-        'HOST': 'localhost',
-        'PORT': '',
-    }
-}
 
-'''
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'exiovisuals',
-        'USER': 'django_user',
-        'PASSWORD': 'VanSteenis',
-        'HOST': '132.229.16.77',
-        'PORT': '3306',
-    }
-}
-'''
+
 LEAFLET_CONFIG = {
 
  #  'SPATIAL_EXTENT': (4.9597, 52.4551, 4.9, 52.3372),
@@ -124,8 +103,6 @@ STATICFILES_FINDERS = (
 #    'django.contrib.staticfiles.finders.DefaultStorageFinder',
 )
 
-# Make this unique, and don't share it with anybody.
-SECRET_KEY = '@r&np%79_21@rn_^xhbic8_&2y45c(b)&vn%y8+36lctpxj-l-'
 
 
 
